@@ -60,8 +60,10 @@ if ( class_exists( 'GFForms' ) ) {
 		public function init() {
 			parent::init();
 			add_filter( 'gravityflow_permission_granted_entry_detail', array( $this, 'filter_gravityflow_permission_granted_entry_detail' ), 10, 4 );
-			add_filter( 'gravityflow_status_args', array( $this, 'filter_gravityflow_status_args' ) );
-			add_filter( 'gravityflow_bulk_action_status_table', array( $this, 'filter_gravityflow_bulk_action_status_table' ), 10, 4 );
+			if ( GFAPI::current_user_can_any( 'gravityflow_workflow_detail_admin_actions' ) ) {
+				add_filter( 'gravityflow_status_args', array( $this, 'filter_gravityflow_status_args' ) );
+				add_filter( 'gravityflow_bulk_action_status_table', array( $this, 'filter_gravityflow_bulk_action_status_table' ), 10, 4 );
+			}
 		}
 
 		public function init_frontend() {
