@@ -19,9 +19,12 @@ export default class CheckboxField extends React.Component {
 
 	render() {
 		return (<div className="gravityflow-setting"><label>
-			<input type="checkbox" name={this.props.settingName}
-				   checked={this.props.checked}
-				   onChange={this._handleChange}/>{this.props.label}
+			<input
+				type="checkbox"
+				className={ 'gravityflow-setting-' + this.props.settingName }
+				name={this.props.settingName}
+				checked={this.props.checked}
+				onChange={this._handleChange}/>{this.props.label}
 		</label>
 		</div>);
 	}

@@ -51,6 +51,7 @@ export default class SelectField extends React.Component {
 
 		return (<div className="gravityflow-setting">{label}
 			<select
+				className={ 'gravityflow-setting-' + this.props.settingName }
 				type="select"
 				multiple={this.props.multiple}
 				name={this.props.settingName}

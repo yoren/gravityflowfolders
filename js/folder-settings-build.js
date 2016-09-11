@@ -52,7 +52,10 @@ var CheckboxField = function (_React$Component) {
 				_react2.default.createElement(
 					'label',
 					null,
-					_react2.default.createElement('input', { type: 'checkbox', name: this.props.settingName,
+					_react2.default.createElement('input', {
+						type: 'checkbox',
+						className: 'gravityflow-setting-' + this.props.settingName,
+						name: this.props.settingName,
 						checked: this.props.checked,
 						onChange: this._handleChange }),
 					this.props.label
@@ -631,6 +634,7 @@ var SelectField = function (_React$Component) {
 				_react2.default.createElement(
 					'select',
 					{
+						className: 'gravityflow-setting-' + this.props.settingName,
 						type: 'select',
 						multiple: this.props.multiple,
 						name: this.props.settingName,
