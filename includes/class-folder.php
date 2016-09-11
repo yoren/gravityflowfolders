@@ -43,6 +43,16 @@ abstract class Gravity_Flow_Folder {
 		$this->config = $config;
 	}
 
+	public function icon( $echo = true ) {
+		$icon = '<span class="fa-stack fa-3x">
+					<i class="fa fa-folder-o fa-stack-2x"></i>
+				</span>';
+		if ( $echo ) {
+			echo $icon;
+		}
+		return $icon;
+	}
+
 	public function get_name() {
 		return $this->name;
 	}

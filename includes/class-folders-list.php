@@ -38,7 +38,7 @@ class Gravity_Flow_Folders_List {
 
 						<div class="gravityflowfolders-folder-container">
 							<div>
-								<i class="gravityflowfolders-folder fa fa-folder-o"></i>
+								<?php $folder->icon(); ?>
 							</div>
 							<div>
 								<?php

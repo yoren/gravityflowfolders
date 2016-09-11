@@ -8,6 +8,17 @@ class Gravity_Flow_Folder_List extends Gravity_Flow_Folder {
 
 	protected $entries = null;
 
+	public function icon( $echo = true ) {
+		$icon = '<span class="fa-stack fa-3x">
+					<i class="fa fa-folder-o fa-stack-2x"></i>
+					<i class="fa fa-list-alt fa-stack-1x" style="font-size:20px"></i>
+				</span>';
+		if ( $echo ) {
+			echo $icon;
+		}
+		return $icon;
+	}
+
 	public function render( $args = array() ) {
 
 		require_once( gravity_flow()->get_base_path() . '/includes/pages/class-status.php' );
