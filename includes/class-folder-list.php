@@ -8,18 +8,6 @@ class Gravity_Flow_Folder_List extends Gravity_Flow_Folder {
 
 	protected $entries = null;
 
-	public function get_entries( $search_criteria, $sorting = array(), $paging = array() ) {
-
-		if ( isset( $this->entries ) ) {
-			return $this->entries;
-		}
-
-		$entries = GFAPI::get_entries( 0, $search_criteria, $sorting, $paging, $total_count );
-
-		$this->entries = $entries;
-		return $this->entries;
-	}
-
 	public function render( $args = array() ) {
 
 		require_once( gravity_flow()->get_base_path() . '/includes/pages/class-status.php' );
