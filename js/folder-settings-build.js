@@ -1029,6 +1029,7 @@ jQuery(document).ready(function () {
 					type: 'list',
 					sequential: true,
 					assignees: [],
+					permissions: 'all',
 					nodes: [{
 						id: _shortid2.default.generate(),
 						form_id: '',

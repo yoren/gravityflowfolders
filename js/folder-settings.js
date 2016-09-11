@@ -112,7 +112,6 @@ class FolderSettings extends RepeaterItem {
 	}
 }
 
-
 jQuery(document).ready(function () {
 	function _updateFieldJSON(name, items) {
 		document.getElementById('folders').value = JSON.stringify(items);
@@ -128,6 +127,7 @@ jQuery(document).ready(function () {
 					type: 'list',
 					sequential: true,
 					assignees: [],
+					permissions: 'all',
 					nodes:
 						[
 							{
