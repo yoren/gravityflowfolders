@@ -60,6 +60,8 @@ if ( class_exists( 'GFForms' ) ) {
 		public function init() {
 			parent::init();
 			add_filter( 'gravityflow_permission_granted_entry_detail', array( $this, 'filter_gravityflow_permission_granted_entry_detail' ), 10, 4 );
+			add_filter( 'gravityflow_status_args', array( $this, 'filter_gravityflow_status_args' ) );
+			add_filter( 'gravityflow_bulk_action_status_table', array( $this, 'filter_gravityflow_bulk_action_status_table' ), 10, 4 );
 		}
 
 		public function init_frontend() {
@@ -233,19 +235,6 @@ if ( class_exists( 'GFForms' ) ) {
 			<div id="gravityflowfolders-folders-settings-ui">
 				<!-- placeholder for custom fields UI -->
 			</div>
-			<script>
-				jQuery.ajax({
-					url: '/wp-json/gf/v2/entries/652',
-					method: 'GET',
-					beforeSend: function (xhr) {
-						xhr.setRequestHeader('X-WP-Nonce', <?php echo json_encode( wp_create_nonce( 'wp_rest' ) ); ?> )
-					},
-					dataType: 'json',
-					success: function (data) {
-						console.log(data);
-					}
-				});
-			</script>
 			<?php
 		}
 
@@ -569,6 +558,38 @@ if ( class_exists( 'GFForms' ) ) {
 		public function action_gravityflow_enqueue_frontend_scripts() {
 			$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG || isset( $_GET['gform_debug'] ) ? '' : '.min';
 			wp_enqueue_style( 'gravityflowfolders_folders',  $this->get_base_url() . "/css/folders{$min}.css", null, $this->_version );
+		}
+
+		public function filter_gravityflow_status_args( $args ) {
+			$folders = $this->get_folders();
+			if ( empty( $folders ) ) {
+				return $args;
+			}
+			$folder_bulk_actions = array();
+			foreach ( $folders as $folder ) {
+				$folder_bulk_actions[ 'add_to_folder_' . $folder->get_id() ] = sprintf( esc_html__( 'Add to folder: %s', 'gravityflowfolders' ), $folder->get_name() );
+			}
+			$args['bulk_actions'] = $folder_bulk_actions;
+			return $args;
+		}
+
+		public function filter_gravityflow_bulk_action_status_table( $feedback, $bulk_action, $entry_ids, $args ) {
+			if ( strpos( $bulk_action, 'add_to_folder_' ) === false ) {
+				return '';
+			}
+
+			$folder_id = str_replace( 'add_to_folder_', '', $bulk_action );
+
+			$folder = $this->get_folder( $folder_id );
+
+			if ( $folder ) {
+				foreach ( $entry_ids as $entry_id ) {
+					$folder->add_entry( $entry_id );
+				}
+			}
+
+			$message = sprintf( esc_html__( 'Entries assigned to folder: %s.',  'gravityflow' ), $folder->get_name() );
+			return $message;
 		}
 	}
 }
