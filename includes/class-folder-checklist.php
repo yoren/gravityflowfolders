@@ -30,6 +30,33 @@ class Gravity_Flow_Folder_Checklist extends Gravity_Flow_Folder {
 		}
 	}
 
+	public function get_entries() {
+
+		if ( isset( $this->entries ) ) {
+			return $this->entries;
+		}
+
+		$search_criteria = array(
+			'field_filters' => array(
+				array(
+					'key'      => 'created_by',
+					'value'    => $this->user->ID,
+					'operator' => '=',
+				),
+			),
+		);
+
+		$form_ids = array();
+
+		foreach ( $this->nodes as $node ) {
+			$form_ids[] = $node['form_id'];
+		}
+
+		$entries = GFAPI::get_entries( $form_ids, $search_criteria );
+
+		$this->entries = $entries;
+		return $this->entries;
+	}
 
 	public function get_entry_ids() {
 		global $wpdb;
@@ -67,24 +94,49 @@ class Gravity_Flow_Folder_Checklist extends Gravity_Flow_Folder {
 		return $entry_ids[ $form_id ];
 	}
 
+	public function get_entries_for_form( $form_id ) {
+		$entries_for_form = array();
+		$entries = $this->get_entries();
+		foreach ( $entries as $entry ) {
+			if ( $entry['form_id'] == $form_id ) {
+				$entries_for_form[] = $entry;
+			}
+		}
+		return $entries_for_form;
+	}
+
 	public function render( $args = array() ) {
 		$can_submit = true;
+
+		$items = array();
+
+		$previous_entry = null;
 
 		foreach ( $this->nodes as $node ) {
 			$form_id = $node['form_id'];
 			$form      = GFAPI::get_form( $form_id );
-			$entry_ids = $this->get_entry_ids_for_form( $form_id );
+			$entries = $this->get_entries_for_form( $form_id );
 
-			if ( empty( $entry_ids ) ) {
+			if ( empty( $entries ) ) {
 				if ( $can_submit ) {
 					$url  = add_query_arg( array( 'id' => $form_id ) );
-					$item = sprintf( '<a href="%s" style="text-decoration:none;">%s</a> (pending)', esc_url( $url ), esc_html( $form['title'] ) );
+
+					$form_title = sprintf( '<a href="%s" style="text-decoration:none;">%s</a>',  esc_url( $url ), esc_html( $form['title'] ) );
+
+					if ( $previous_entry ) {
+						$steps = gravity_flow()->get_steps( $previous_entry['form_id'], $previous_entry );
+						if ( ! empty( $steps ) && empty( $previous_entry[ $this->get_meta_key() ] ) ) {
+							$form_title = sprintf( '<span class="gravityflowfolders-disabled">%s</span>', esc_html( $form['title'] ) );
+						}
+					}
+
+					$item = sprintf( '%s (pending)', $form_title );
 				} else {
 					$item = sprintf( '<span class="gravityflowfolders-disabled">%s</span>', esc_html( $form['title'] ) );
 				}
 			} else {
 				$url  = add_query_arg( array(
-					'lid'  => $entry_ids[0],
+					'lid'  => $entries[0]['id'],
 					'page' => 'gravityflow-inbox',
 					'view' => 'entry',
 				) );
@@ -92,8 +144,12 @@ class Gravity_Flow_Folder_Checklist extends Gravity_Flow_Folder {
 			}
 			$items[] = sprintf( '<li>%s</li>', $item );
 
-			if ( $this->sequential && empty( $entry_ids ) ) {
+			if ( $this->sequential && empty( $entries ) ) {
 				$can_submit = false;
+			}
+
+			if ( isset( $entries[0] ) ) {
+				$previous_entry = $entries[0];
 			}
 		}
 

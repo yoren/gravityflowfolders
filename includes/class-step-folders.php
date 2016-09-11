@@ -36,14 +36,12 @@ if ( class_exists( 'Gravity_Flow_Step' ) ) {
 
 			$folder_choices = array();
 			foreach ( $folders as $folder ) {
-				if ( $folder->get_type() == 'list' ) {
-					$label = $folder->get_name();
+				$label = $folder->get_name();
 
-					$folder_choices[] = array(
-						'label' => $label,
-						'name'  => $folder->get_meta_key(),
-					);
-				}
+				$folder_choices[] = array(
+					'label' => $label,
+					'name'  => $folder->get_meta_key(),
+				);
 			}
 
 			if ( ! empty( $folder_choices ) ) {
