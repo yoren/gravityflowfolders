@@ -27,7 +27,8 @@ class Gravity_Flow_Folders_List {
 			<ul>
 				<?php
 				foreach ( $folders as $folder ) {
-					if ( ! $folder->user_is_assignee( $user->ID ) ) {
+					if ( ! $folder->user_has_permission( $user->ID ) ) {
+						gravity_flow_folders()->log_debug( __METHOD__ . '(): the current user does not have permission for this folder: ' . $folder->get_name() );
 						continue;
 					}
 					echo '<li>';

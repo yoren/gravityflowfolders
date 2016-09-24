@@ -85,7 +85,7 @@ abstract class Gravity_Flow_Folder {
 	public function render( $args = array() ) {
 	}
 
-	public function user_is_assignee( $user_id = 0 ) {
+	public function user_has_permission( $user_id = 0 ) {
 
 		$config = $this->config;
 
@@ -104,11 +104,13 @@ abstract class Gravity_Flow_Folder {
 		if ( array_search( 'user_id|' . $user_id, $assignees ) !== false ) {
 			return true;
 		}
+
 		foreach ( gravity_flow()->get_user_roles() as $role ) {
 			if ( array_search( 'role|' . $role, $assignees ) !== false ) {
 				return true;
 			}
 		}
+
 		return false;
 	}
 }

@@ -15,11 +15,10 @@ class Gravity_Flow_Folders_Detail {
 
 		$is_user_admin = $folder->user->ID !== get_current_user_id();
 
-		if ( ! $is_user_admin && ! $folder->user_is_assignee( $folder->user->ID ) && ! gravity_flow_folders()->current_user_can_any( 'gravityflowfolders_user_admin' ) ) {
+		if ( ! $is_user_admin && ! $folder->user_has_permission( $folder->user->ID ) && ! gravity_flow_folders()->current_user_can_any( 'gravityflowfolders_user_admin' ) ) {
 			esc_html_e( "You don't have permission to view this folder", 'gravityflowfolders' );
 			return;
 		}
-
 
 		$list_url = remove_query_arg( 'folder' );
 		if ( $args['breadcrumbs'] ) {

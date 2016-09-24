@@ -504,7 +504,7 @@ if ( class_exists( 'GFForms' ) ) {
 					$folder_id = sanitize_text_field( $_GET['folder'] );
 					if ( ! empty( $entry[ 'workflow_folder_' . $folder_id ] ) ) {
 						$folder = $this->get_folder( $folder_id );
-						if ( $folder->user_is_assignee() ) {
+						if ( $folder->user_has_permission() ) {
 							$permission_granted = true;
 						}
 					}
@@ -512,7 +512,7 @@ if ( class_exists( 'GFForms' ) ) {
 					$folders = $this->get_folders();
 					foreach ( $folders as $folder ) {
 						if ( ! empty( $entry[ 'workflow_folder_' . $folder->get_id() ] ) ) {
-							if ( $folder->user_is_assignee() ) {
+							if ( $folder->user_has_permission() ) {
 								$permission_granted = true;
 								break;
 							}
