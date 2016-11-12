@@ -59,17 +59,26 @@ if ( class_exists( 'GFForms' ) ) {
 
 		public function init() {
 			parent::init();
-			add_filter( 'gravityflow_permission_granted_entry_detail', array( $this, 'filter_gravityflow_permission_granted_entry_detail' ), 10, 4 );
+			add_filter( 'gravityflow_permission_granted_entry_detail', array(
+				$this,
+				'filter_gravityflow_permission_granted_entry_detail'
+			), 10, 4 );
 			if ( GFAPI::current_user_can_any( 'gravityflow_workflow_detail_admin_actions' ) ) {
 				add_filter( 'gravityflow_status_args', array( $this, 'filter_gravityflow_status_args' ) );
-				add_filter( 'gravityflow_bulk_action_status_table', array( $this, 'filter_gravityflow_bulk_action_status_table' ), 10, 4 );
+				add_filter( 'gravityflow_bulk_action_status_table', array(
+					$this,
+					'filter_gravityflow_bulk_action_status_table'
+				), 10, 4 );
 			}
 		}
 
 		public function init_frontend() {
 			parent::init_frontend();
 			add_filter( 'gravityflow_shortcode_folders', array( $this, 'shortcode' ), 10, 2 );
-			add_filter( 'gravityflow_enqueue_frontend_scripts', array( $this, 'action_gravityflow_enqueue_frontend_scripts' ), 10 );
+			add_filter( 'gravityflow_enqueue_frontend_scripts', array(
+				$this,
+				'action_gravityflow_enqueue_frontend_scripts'
+			), 10 );
 		}
 
 		public function init_admin() {
@@ -80,7 +89,7 @@ if ( class_exists( 'GFForms' ) ) {
 		}
 
 		public function scripts() {
-			$min       = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG || isset( $_GET['gform_debug'] ) ? '' : '.min';
+			$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG || isset( $_GET['gform_debug'] ) ? '' : '.min';
 
 			if ( $this->is_settings_page() ) {
 				$forms = GFFormsModel::get_forms();
@@ -94,7 +103,7 @@ if ( class_exists( 'GFForms' ) ) {
 				}
 
 				$user_choices = $this->get_users_as_choices();
-				$scripts[] = array(
+				$scripts[]    = array(
 					'handle'  => 'gravityflowfolders_settings_js',
 					'src'     => $this->get_base_url() . "/js/folder-settings-build{$min}.js",
 					'version' => $this->_version,
@@ -288,9 +297,9 @@ if ( class_exists( 'GFForms' ) ) {
 		public function folders_page( $args ) {
 			$defaults = array(
 				'display_header' => true,
-				'breadcrumbs' => true,
+				'breadcrumbs'    => true,
 			);
-			$args = array_merge( $defaults, $args );
+			$args     = array_merge( $defaults, $args );
 			?>
 			<div class="wrap gf_entry_wrap gravityflow_workflow_wrap gravityflow_workflow_submit">
 				<?php if ( $args['display_header'] ) : ?>
@@ -407,11 +416,9 @@ if ( class_exists( 'GFForms' ) ) {
 
 		public function shortcode( $html, $atts ) {
 
-			$default_shortcode_atts = gravity_flow()->get_shortcode_defaults();
+			$a = gravity_flow()->get_shortcode_atts( $atts );
 
-			$default_shortcode_atts['folder'] = '';
-
-			$a = shortcode_atts( $default_shortcode_atts, $atts );
+			$a['folder'] = isset( $atts['folder'] ) ? $atts['folder'] : '';
 
 			if ( rgget( 'view' ) ) {
 				wp_enqueue_script( 'gravityflow_entry_detail' );
@@ -443,10 +450,41 @@ if ( class_exists( 'GFForms' ) ) {
 			}
 
 			$detail_base_url = add_query_arg( array( 'page' => 'gravityflow-inbox', 'view' => 'entry' ) );
+
 			$args = array(
-				'display_header'    => false,
-				'detail_base_url'   => $detail_base_url,
-				'check_permissions' => $check_permissions,
+				'base_url'           => remove_query_arg( array(
+					'entry-id',
+					'form-id',
+					'start-date',
+					'end-date',
+					'_wpnonce',
+					'_wp_http_referer',
+					'action',
+					'action2',
+					'o',
+					'f',
+					't',
+					'v',
+					'gravityflow-print-page-break',
+					'gravityflow-print-timelines',
+				) ),
+				'detail_base_url'    => $detail_base_url,
+				'display_header'     => false,
+				'action_url'         => 'http' . ( isset( $_SERVER['HTTPS'] ) ? 's' : '' ) . '://' . "{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}?",
+				'constraint_filters' => array(
+					'form_id' => $a['form'],
+				),
+				'field_ids'          => $a['fields'] ? explode( ',', $a['fields'] ) : '',
+				'display_all'        => $a['display_all'],
+				'id_column'          => $a['id_column'],
+				'submitter_column'   => $a['submitter_column'],
+				'step_column'        => $a['step_column'],
+				'status_column'      => $a['status_column'],
+				'last_updated'       => $a['last_updated'],
+				'step_status'        => $a['step_status'],
+				'workflow_info'      => $a['workflow_info'],
+				'sidebar'            => $a['sidebar'],
+				'check_permissions'  => $check_permissions,
 			);
 
 			$folder = sanitize_text_field( rgget( 'folder' ) );
@@ -520,6 +558,7 @@ if ( class_exists( 'GFForms' ) ) {
 					}
 				}
 			}
+
 			return $permission_granted;
 		}
 
@@ -559,7 +598,7 @@ if ( class_exists( 'GFForms' ) ) {
 
 		public function action_gravityflow_enqueue_frontend_scripts() {
 			$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG || isset( $_GET['gform_debug'] ) ? '' : '.min';
-			wp_enqueue_style( 'gravityflowfolders_folders',  $this->get_base_url() . "/css/folders{$min}.css", null, $this->_version );
+			wp_enqueue_style( 'gravityflowfolders_folders', $this->get_base_url() . "/css/folders{$min}.css", null, $this->_version );
 		}
 
 		public function filter_gravityflow_status_args( $args ) {
@@ -572,6 +611,7 @@ if ( class_exists( 'GFForms' ) ) {
 				$folder_bulk_actions[ 'add_to_folder_' . $folder->get_id() ] = sprintf( esc_html__( 'Add to folder: %s', 'gravityflowfolders' ), $folder->get_name() );
 			}
 			$args['bulk_actions'] = $folder_bulk_actions;
+
 			return $args;
 		}
 
@@ -590,7 +630,8 @@ if ( class_exists( 'GFForms' ) ) {
 				}
 			}
 
-			$message = sprintf( esc_html__( 'Entries assigned to folder: %s.',  'gravityflow' ), $folder->get_name() );
+			$message = sprintf( esc_html__( 'Entries assigned to folder: %s.', 'gravityflow' ), $folder->get_name() );
+
 			return $message;
 		}
 	}

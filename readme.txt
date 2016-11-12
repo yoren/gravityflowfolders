@@ -2,7 +2,7 @@
 Contributors: stevehenty
 Tags: gravity forms, approvals, workflow
 Requires at least: 4.0
-Tested up to: 4.4
+Tested up to: 4.6.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -22,7 +22,7 @@ Facebook: [Steven Henty](https://www.facebook.com/gravityflow.io)
 1. [Purchase and install Gravity Flow](https://gravityflow.io)
 1. Wordpress 4.3+
 1. Gravity Forms 1.9.4+
-1. Gravity Flow 1.1.0.4+
+1. Gravity Flow 1.4.1+
 
 
 = Support =
@@ -43,6 +43,9 @@ The Gravity Flow Folders Extension will work with any license of [Gravity Flow](
 
 
 == ChangeLog ==
+
+= 1.0-beta-1.1 =
+- Added support for shortocde attributes.
 
 = 1.0-beta-1 =
 All new!
