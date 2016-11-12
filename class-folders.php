@@ -69,6 +69,8 @@ if ( class_exists( 'GFForms' ) ) {
 					$this,
 					'filter_gravityflow_bulk_action_status_table'
 				), 10, 4 );
+				add_filter( 'gravityflow_admin_actions_workflow_detail', array( $this, 'filter_gravityflow_admin_actions_workflow_detail' ), 10, 5 );
+				add_filter( 'gravityflow_admin_action_feedback', array( $this, 'filter_gravityflow_admin_action_feedback' ), 10, 4 );
 			}
 		}
 
@@ -633,6 +635,80 @@ if ( class_exists( 'GFForms' ) ) {
 			$message = sprintf( esc_html__( 'Entries assigned to folder: %s.', 'gravityflow' ), $folder->get_name() );
 
 			return $message;
+		}
+
+		public function filter_gravityflow_admin_actions_workflow_detail( $admin_actions, $current_step, $steps, $form, $entry ) {
+			$folders = $this->get_folders();
+
+			if ( empty( $folders ) ) {
+				return $admin_actions;
+			}
+			$add_choices = $remove_choices = array();
+			foreach ( $folders as $folder ) {
+				$folder_id = $folder->get_id();
+				$folder_key = 'workflow_folder_' . $folder_id;
+				if ( empty( $entry[ $folder_key ] ) ) {
+					$add_choices[] = array(
+						'label'   => $folder->get_name(),
+						'value' => 'folders_add|' . $folder_id,
+					);
+				}
+
+				if ( isset( $entry[ $folder_key ] ) && $entry[ $folder_key ] > 0 ) {
+					$remove_choices[] = array(
+						'label'   => $folder->get_name(),
+						'value' => 'folders_remove|' . $folder_id,
+					);
+				}
+			}
+
+			$admin_actions[] = array(
+				'label'   => esc_html__( 'Folders', 'gravityflowfolders' ),
+				'choices' => array(
+					array(
+						'label' => esc_html__( 'Add to folder', 'gravityflowfolders' ),
+						'choices' => $add_choices,
+					),
+					array(
+						'label' => esc_html__( 'Remove from folder', 'gravityflowfolders' ),
+						'choices' => $remove_choices,
+					),
+				),
+			);
+
+			return $admin_actions;
+
+		}
+
+		/**
+		 * Process the entry detail admin actions for folders.
+		 *
+		 * @param $feedback
+		 * @param $admin_action
+		 * @param $form
+		 * @param $entry
+		 *
+		 * @return bool|string|WP_Error
+		 */
+		public function filter_gravityflow_admin_action_feedback( $feedback, $admin_action, $form, $entry ) {
+			if ( strpos( $admin_action, 'folders_' ) === 0 ) {
+				list( $base_admin_action, $folder_id ) = rgexplode( '|', $admin_action, 2 );
+				$folder = $this->get_folder( $folder_id );
+				switch ( $base_admin_action ) {
+					case 'folders_add' :
+						$folder->add_entry( $entry['id'] );
+						$feedback = sprintf( esc_html__( 'Entry added to folder: %s', 'gravityflowfolders' ), $folder->get_name() );
+						break;
+					case 'folders_remove' :
+						$folder->remove_entry( $entry['id'] );
+						$feedback = sprintf( esc_html__( 'Entry removed from folder: %s', 'gravityflowfolders' ), $folder->get_name() );
+				}
+				if ( $feedback ) {
+					$user_id = get_current_user_id();
+					gravity_flow()->add_timeline_note( $entry['id'], $feedback, $user_id );
+				}
+			}
+			return $feedback;
 		}
 	}
 }
