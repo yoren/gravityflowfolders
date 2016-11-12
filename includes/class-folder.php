@@ -68,14 +68,11 @@ abstract class Gravity_Flow_Folder {
 	public function add_entry( $entry_id ) {
 		$key = $this->get_meta_key();
 		gform_update_meta( $entry_id, $key, time() );
-		$label = $this->get_name();
-		$note = sprintf( esc_html__( 'Added to folder: %s', 'gravityflow' ), $label );
-
-		$this->add_note( $note, $entry_id );
 	}
 
-	public function add_note( $note, $entry_id ) {
-		GFFormsModel::add_note( $entry_id, 0, 'folders', $note, 'gravityflow' );
+	public function remove_entry( $entry_id ) {
+		$key = $this->get_meta_key();
+		gform_delete_meta( $entry_id, $key );
 	}
 
 	public function get_meta_key() {
