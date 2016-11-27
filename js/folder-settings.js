@@ -58,18 +58,6 @@ class FolderSettings extends RepeaterItem {
 								</div>)
 		}
 
-		const typeRadioChoices = [
-			{
-				value: 'list',
-				label: strings.entryList
-			}
-			,
-			{
-				value: 'checklist',
-				label: strings.checklist
-			}
-		];
-
 		const permissionsRadioChoices = [
 			{
 				value: 'all',
@@ -94,7 +82,6 @@ class FolderSettings extends RepeaterItem {
 
 			settings = (<div className="gravityflow-folder-settings">
 				<TextField settingName="name" value={this.props.item.name} label={strings.folderName} />
-				<RadioGroupField settingName="type" value={this.props.item.type} choices={typeRadioChoices} horizontal={true} />
 				{checklistSettings}<br />
 				Permissions<br />
 				<RadioGroupField settingName="permissions" value={this.props.item.permissions} choices={permissionsRadioChoices} horizontal={true} />
@@ -124,7 +111,6 @@ jQuery(document).ready(function () {
 				return {
 					id: shortid.generate(),
 					name: strings.defaultFolderName,
-					type: 'list',
 					sequential: true,
 					assignees: [],
 					permissions: 'all',

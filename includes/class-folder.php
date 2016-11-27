@@ -102,7 +102,7 @@ abstract class Gravity_Flow_Folder {
 			return true;
 		}
 
-		foreach ( gravity_flow()->get_user_roles() as $role ) {
+		foreach ( gravity_flow()->get_user_roles( $user_id ) as $role ) {
 			if ( array_search( 'role|' . $role, $assignees ) !== false ) {
 				return true;
 			}

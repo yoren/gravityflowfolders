@@ -6,7 +6,7 @@ Tested up to: 4.6.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Create, update and link entries in Gravity Flow.
+Group entries into custom lists.
 
 == Description ==
 
@@ -43,6 +43,9 @@ The Gravity Flow Folders Extension will work with any license of [Gravity Flow](
 
 
 == ChangeLog ==
+
+= 1.0-beta-2 =
+- Removed checklists.
 
 = 1.0-beta-1.1 =
 - Added support for shortocde attributes.

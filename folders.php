@@ -3,7 +3,7 @@
 Plugin Name: Gravity Flow Folders
 Plugin URI: http://gravityflow.io
 Description: Folders Extension for Gravity Flow.
-Version: 1.0-beta-1.2
+Version: 1.0-beta-2
 Author: Steve Henty
 Author URI: http://gravityflow.io
 License: GPL-3.0+
@@ -25,7 +25,7 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-define( 'GRAVITY_FLOW_FOLDERS_VERSION', '1.0-beta-1.2' );
+define( 'GRAVITY_FLOW_FOLDERS_VERSION', '1.0-beta-2' );
 define( 'GRAVITY_FLOW_FOLDERS_EDD_ITEM_NAME', 'Folders Beta' );
 
 add_action( 'gravityflow_loaded', array( 'Gravity_Flow_Folders_Bootstrap', 'load' ), 1 );
@@ -34,12 +34,11 @@ class Gravity_Flow_Folders_Bootstrap {
 
 	public static function load() {
 		require_once( 'includes/class-folder.php' );
-		require_once( 'includes/class-folder-checklist.php' );
 		require_once( 'includes/class-folder-list.php' );
 
-		require_once( 'includes/class-step-folders.php' );
+		require_once( 'includes/class-step-folders-add.php' );
 		require_once( 'includes/class-step-folders-remove.php' );
-		Gravity_Flow_Steps::register( new Gravity_Flow_Step_Folders() );
+		Gravity_Flow_Steps::register( new Gravity_Flow_Step_Folders_Add() );
 		Gravity_Flow_Steps::register( new Gravity_Flow_Step_Folders_Remove() );
 
 		require_once( 'class-folders.php' );

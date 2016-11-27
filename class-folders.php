@@ -345,14 +345,12 @@ if ( class_exists( 'GFForms' ) ) {
 			$folder = null;
 
 			foreach ( $folder_configs as $folder_config ) {
-				switch ( $folder_config['type'] ) {
-					case 'checklist' :
-						$folder = new Gravity_Flow_Folder_Checklist( $folder_config, $user );
-						break;
-					case 'list' :
-						$folder = new Gravity_Flow_Folder_List( $folder_config, $user );
+
+				$folder = new Gravity_Flow_Folder_List( $folder_config, $user );
+
+				if ( ! $user || $folder->user_has_permission( $user->ID ) ) {
+					$folders[] = $folder;
 				}
-				$folders[] = $folder;
 			}
 
 			return $folders;
@@ -473,9 +471,6 @@ if ( class_exists( 'GFForms' ) ) {
 				'detail_base_url'    => $detail_base_url,
 				'display_header'     => false,
 				'action_url'         => 'http' . ( isset( $_SERVER['HTTPS'] ) ? 's' : '' ) . '://' . "{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}?",
-				'constraint_filters' => array(
-					'form_id' => $a['form'],
-				),
 				'field_ids'          => $a['fields'] ? explode( ',', $a['fields'] ) : '',
 				'display_all'        => $a['display_all'],
 				'id_column'          => $a['id_column'],
@@ -488,6 +483,10 @@ if ( class_exists( 'GFForms' ) ) {
 				'sidebar'            => $a['sidebar'],
 				'check_permissions'  => $check_permissions,
 			);
+
+			if ( ! empty( $a['form_id'] ) ) {
+				$args['constraint_filters'] = array( 'form_id' => $a['form_id'] );
+			}
 
 			$folder = sanitize_text_field( rgget( 'folder' ) );
 

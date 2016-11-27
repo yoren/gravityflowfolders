@@ -956,14 +956,6 @@ var FolderSettings = function (_RepeaterItem2) {
 				);
 			}
 
-			var typeRadioChoices = [{
-				value: 'list',
-				label: strings.entryList
-			}, {
-				value: 'checklist',
-				label: strings.checklist
-			}];
-
 			var permissionsRadioChoices = [{
 				value: 'all',
 				label: strings.allUsers
@@ -986,7 +978,6 @@ var FolderSettings = function (_RepeaterItem2) {
 					'div',
 					{ className: 'gravityflow-folder-settings' },
 					_react2.default.createElement(_text2.default, { settingName: 'name', value: this.props.item.name, label: strings.folderName }),
-					_react2.default.createElement(_radioGroup2.default, { settingName: 'type', value: this.props.item.type, choices: typeRadioChoices, horizontal: true }),
 					checklistSettings,
 					_react2.default.createElement('br', null),
 					'Permissions',
@@ -1030,7 +1021,6 @@ jQuery(document).ready(function () {
 				return {
 					id: _shortid2.default.generate(),
 					name: strings.defaultFolderName,
-					type: 'list',
 					sequential: true,
 					assignees: [],
 					permissions: 'all',

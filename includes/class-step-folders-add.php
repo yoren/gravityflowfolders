@@ -13,7 +13,7 @@
 
 if ( class_exists( 'Gravity_Flow_Step' ) ) {
 
-	class Gravity_Flow_Step_Folders extends Gravity_Flow_Step {
+	class Gravity_Flow_Step_Folders_Add extends Gravity_Flow_Step {
 		public $_step_type = 'folders';
 
 		public function get_label() {
