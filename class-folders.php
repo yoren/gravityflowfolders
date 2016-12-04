@@ -418,6 +418,10 @@ if ( class_exists( 'GFForms' ) ) {
 
 			$a = gravity_flow()->get_shortcode_atts( $atts );
 
+			if ( $a['form_id'] > 0 ) {
+				$a['form'] = $a['form_id'];
+			}
+
 			$a['folder'] = isset( $atts['folder'] ) ? $atts['folder'] : '';
 
 			if ( rgget( 'view' ) ) {
@@ -484,8 +488,8 @@ if ( class_exists( 'GFForms' ) ) {
 				'check_permissions'  => $check_permissions,
 			);
 
-			if ( ! empty( $a['form_id'] ) ) {
-				$args['constraint_filters'] = array( 'form_id' => $a['form_id'] );
+			if ( ! empty( $a['form'] ) ) {
+				$args['constraint_filters'] = array( 'form_id' => $a['form'] );
 			}
 
 			$folder = sanitize_text_field( rgget( 'folder' ) );
