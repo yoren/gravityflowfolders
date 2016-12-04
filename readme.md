@@ -3,7 +3,7 @@ Gravity Flow Folders Extension
 
 Gravity Flow is a commercial plugin for WordPress which provides a Workflow platform for forms created in Gravity Forms.
 
-Gravity Flow Folders Extension is a commercial plugin for WordPress which allows Gravity Flow administrators to create workflow steps that create or update entries for a different form.
+The Gravity Flow Folders Extension allows administrators to organise entries logically or arbitrarily into logical grouping.
 
 This repository is a development version of the Gravity Flow Folders Extension and is intended to facilitate communication with developers. It is not stable and not intended for installation on production sites.
 
