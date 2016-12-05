@@ -31,17 +31,16 @@ class Gravity_Flow_Folder_List extends Gravity_Flow_Folder {
 
 		$args = array_merge( $defaults, $args );
 
-		if ( empty( $args['constraint_filters'] ) ) {
-			$args['constraint_filters'] = array(
-				'field_filters' => array(
-					array(
-						'key'      => $this->get_meta_key(),
-						'value'    => 0,
-						'operator' => '>',
-					),
-				),
-			);
+		if ( ! isset( $args['constraint_filters']['field_filters'] ) ) {
+			$args['constraint_filters']['field_filters'] = array();
+
 		}
+
+		$args['constraint_filters']['field_filters'][] = array(
+			'key'      => $this->get_meta_key(),
+			'value'    => 0,
+			'operator' => '>',
+		);
 
 		if ( empty( $args['filter_hidden_fields'] ) ) {
 			$args['filter_hidden_fields'] = array(

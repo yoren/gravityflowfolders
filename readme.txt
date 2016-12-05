@@ -44,6 +44,9 @@ The Gravity Flow Folders Extension will work with any license of [Gravity Flow](
 
 == ChangeLog ==
 
+= 1.0-beta-2.2 =
+- Fixed form shortcode attribute.
+
 = 1.0-beta-2.1 =
 - Fixed shortcode attributes.
 
