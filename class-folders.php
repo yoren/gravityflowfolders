@@ -57,6 +57,11 @@ if ( class_exists( 'GFForms' ) ) {
 		private function __clone() {
 		} /* do nothing */
 
+		public function pre_init() {
+			parent::pre_init();
+			add_action( 'gravityflow_pre_restart_workflow', array( $this, 'action_gravityflow_pre_restart_workflow' ), 10, 2 );
+		}
+
 		public function init() {
 			parent::init();
 			add_filter( 'gravityflow_permission_granted_entry_detail', array(
@@ -712,6 +717,16 @@ if ( class_exists( 'GFForms' ) ) {
 				}
 			}
 			return $feedback;
+		}
+
+		public function action_gravityflow_pre_restart_workflow( $entry, $form ) {
+			$folders = $this->get_folders();
+			foreach ( $folders as $folder ) {
+				$folder_meta_key = $folder->get_meta_key();
+				if ( isset( $entry[ $folder_meta_key ] ) && $entry[ $folder_meta_key ] > 0 ) {
+					$folder->remove_entry( $entry['id'] );
+				}
+			}
 		}
 	}
 }
