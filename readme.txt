@@ -44,6 +44,9 @@ The Gravity Flow Folders Extension will work with any license of [Gravity Flow](
 
 == ChangeLog ==
 
+= 1.0-beta-2.3 =
+- Remove entry from all folders on workflow restart. Requires Gravity Flow 1.4.3.
+
 = 1.0-beta-2.2 =
 - Fixed form shortcode attribute.
 
