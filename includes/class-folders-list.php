@@ -43,7 +43,7 @@ class Gravity_Flow_Folders_List {
 
 						<div class="gravityflowfolders-folder-container">
 							<div>
-								<?php $folder->icon(); ?>
+								<?php $folder->icon( 5 ); ?>
 							</div>
 							<div>
 								<?php
