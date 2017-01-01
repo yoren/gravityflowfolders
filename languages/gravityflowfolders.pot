@@ -1,13 +1,13 @@
-# Copyright 2015-2016 Steven Henty.
+# Copyright 2015-2017 Steven Henty.
 msgid ""
 msgstr ""
-"Project-Id-Version: Gravity Flow Folders 1.0-beta-2.1\n"
+"Project-Id-Version: Gravity Flow Folders 1.0.0\n"
 "Report-Msgid-Bugs-To: https://www.gravityflow.io\n"
-"POT-Creation-Date: 2016-12-04 16:14:35+00:00\n"
+"POT-Creation-Date: 2017-01-01 20:49:25+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Steven Henty <support@gravityflow.io>\n"
 "Language-Team: Steven Henty <support@gravityflow.io>\n"
 "X-Generator: Gravity Flow Build Script\n"
@@ -24,135 +24,139 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Textdomain-Support: yes\n"
 
-#: class-folders.php:99
+#: class-folders.php:129
 msgid "Select a form"
 msgstr ""
 
-#: class-folders.php:121
+#: class-folders.php:151
 msgid "Name"
 msgstr ""
 
-#: class-folders.php:122
+#: class-folders.php:152
 msgid "Custom Label"
 msgstr ""
 
-#: class-folders.php:123
+#: class-folders.php:153
 msgid "Forms"
 msgstr ""
 
-#: class-folders.php:124
+#: class-folders.php:154
 msgid "Entry List"
 msgstr ""
 
-#: class-folders.php:125
+#: class-folders.php:155
 msgid "Personal Checklist"
 msgstr ""
 
-#: class-folders.php:126
+#: class-folders.php:156
 msgid "Sequential"
 msgstr ""
 
-#: class-folders.php:127
+#: class-folders.php:157
 msgid "You don't have any folders."
 msgstr ""
 
-#: class-folders.php:128
+#: class-folders.php:158
 msgid "Let's add one"
 msgstr ""
 
-#: class-folders.php:129
+#: class-folders.php:159
 msgid "This item will be deleted. Are you sure?"
 msgstr ""
 
-#: class-folders.php:130
+#: class-folders.php:160
 msgid "New Folder"
 msgstr ""
 
-#: class-folders.php:131
+#: class-folders.php:161
 msgid "All Users"
 msgstr ""
 
-#: class-folders.php:132
+#: class-folders.php:162
 msgid "Select Users"
 msgstr ""
 
-#: class-folders.php:203
+#: class-folders.php:248
 msgid "Configuration"
 msgstr ""
 
-#: class-folders.php:207 class-folders.php:257 class-folders.php:279
-#: class-folders.php:281 class-folders.php:313 class-folders.php:412
-#: class-folders.php:669 includes/class-folders-detail.php:34
-#: includes/class-step-folders-add.php:51
-#: includes/class-step-folders-add.php:61
-#: includes/class-step-folders-remove.php:51
-#: includes/class-step-folders-remove.php:61
+#: class-folders.php:252 class-folders.php:335 class-folders.php:366
+#: class-folders.php:368 class-folders.php:412 class-folders.php:534
+#: class-folders.php:873 includes/class-folders-detail.php:43
+#: includes/class-step-folders-add.php:66
+#: includes/class-step-folders-add.php:76
+#: includes/class-step-folders-remove.php:65
+#: includes/class-step-folders-remove.php:75
 msgid "Folders"
 msgstr ""
 
-#: class-folders.php:588 includes/class-folders-detail.php:30
-#: includes/class-folders-list.php:17
+#: class-folders.php:745 includes/class-folders-detail.php:39
+#: includes/class-folders-list.php:21
 msgid "Users"
 msgstr ""
 
-#: class-folders.php:592
+#: class-folders.php:749
 msgid "Roles"
 msgstr ""
 
-#: class-folders.php:616
+#: class-folders.php:791
 msgid "Add to folder: %s"
 msgstr ""
 
-#: class-folders.php:638
+#: class-folders.php:827
 msgid "Entries assigned to folder: %s."
 msgstr ""
 
-#: class-folders.php:672
+#: class-folders.php:876
 msgid "Add to folder"
 msgstr ""
 
-#: class-folders.php:676
+#: class-folders.php:880
 msgid "Remove from folder"
 msgstr ""
 
-#: class-folders.php:703
+#: class-folders.php:909
 msgid "Entry added to folder: %s"
 msgstr ""
 
-#: class-folders.php:707
+#: class-folders.php:913
 msgid "Entry removed from folder: %s"
 msgstr ""
 
-#: includes/class-folders-detail.php:19
+#: includes/class-folder.php:147
+msgid "Method '%s' not implemented. Must be over-ridden in subclass."
+msgstr ""
+
+#: includes/class-folders-detail.php:28
 msgid "You don't have permission to view this folder"
 msgstr ""
 
-#: includes/class-folders-page.php:36
+#: includes/class-folders-page.php:44
 msgid "Folder not found."
 msgstr ""
 
-#: includes/class-folders-page.php:44
+#: includes/class-folders-page.php:52
 msgid "You don't have any folders configured."
 msgstr ""
 
-#: includes/class-step-folders-add.php:20
+#: includes/class-step-folders-add.php:28
 msgid "Add to Folder"
 msgstr ""
 
-#: includes/class-step-folders-add.php:58
-#: includes/class-step-folders-remove.php:58
+#: includes/class-step-folders-add.php:73
+#: includes/class-step-folders-remove.php:72
 msgid "You don't have any folders set up."
 msgstr ""
 
-#: includes/class-step-folders-add.php:88
+#: includes/class-step-folders-add.php:115
 msgid "Added to folder: %s"
 msgstr ""
 
-#: includes/class-step-folders-remove.php:20
+#: includes/class-step-folders-remove.php:27
 msgid "Remove from Folder"
 msgstr ""
 
-#: includes/class-step-folders-remove.php:88
+#: includes/class-step-folders-remove.php:116
 msgid "Removed from folder: %s"
 msgstr ""
 
