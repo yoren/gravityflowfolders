@@ -5,6 +5,15 @@ if ( ! class_exists( 'GFForms' ) ) {
 }
 
 class Gravity_Flow_Folders_Detail {
+
+	/**
+	 * Renders the detail page wrapper for the given folder and renders the folder.
+	 *
+	 * @since 1.0
+	 *
+	 * @param Gravity_Flow_Folder $folder
+	 * @param array $args
+	 */
 	public static function display( Gravity_Flow_Folder $folder, $args = array() ) {
 
 		$defaults = array(

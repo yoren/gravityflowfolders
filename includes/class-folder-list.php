@@ -4,18 +4,35 @@ if ( ! class_exists( 'GFForms' ) ) {
 	die();
 }
 
+/**
+ * An implementation of a Folder which displays a list on entries using the status list table.
+ *
+ * @since 1.0
+ */
 class Gravity_Flow_Folder_List extends Gravity_Flow_Folder {
 
-	protected $entries = null;
-
-	public function icon( $echo = true ) {
-		$icon = '<i class="gravityflowfolders-folder fa fa-folder-o fa-5x"></i>';
+	/**
+	 * @param bool $echo
+	 *
+	 * @return string
+	 */
+	public function icon( $size = 1, $echo = true ) {
+		$icon = sprintf( '<i class="gravityflowfolders-folder fa fa-folder-o fa-%dx"></i>', $size );
 		if ( $echo ) {
 			echo $icon;
 		}
 		return $icon;
 	}
 
+	/**
+	 * Renders the folder.
+	 *
+	 * @since 1.0
+	 *
+	 * @param array $args
+	 *
+	 * @return bool|WP_Error
+	 */
 	public function render( $args = array() ) {
 
 		require_once( gravity_flow()->get_base_path() . '/includes/pages/class-status.php' );
@@ -51,5 +68,7 @@ class Gravity_Flow_Folder_List extends Gravity_Flow_Folder {
 
 
 		Gravity_Flow_Status::render( $args );
+
+		return true;
 	}
 }

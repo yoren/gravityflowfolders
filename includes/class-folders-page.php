@@ -1,6 +1,14 @@
 <?php
 
 class Gravity_Flow_Folders_Page {
+
+	/**
+	 * Renders the folder page.
+	 *
+	 * @since 1.0
+	 *
+	 * @param $args
+	 */
 	public static function render( $args ) {
 
 		$defaults = array(

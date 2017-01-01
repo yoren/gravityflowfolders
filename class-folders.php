@@ -57,11 +57,19 @@ if ( class_exists( 'GFForms' ) ) {
 		private function __clone() {
 		} /* do nothing */
 
+		/**
+		 * Early initialization.
+		 *
+		 * @since 1.0
+		 */
 		public function pre_init() {
 			parent::pre_init();
 			add_action( 'gravityflow_pre_restart_workflow', array( $this, 'action_gravityflow_pre_restart_workflow' ), 10, 2 );
 		}
 
+		/**
+		 * Plugin initialization.
+		 */
 		public function init() {
 			parent::init();
 			add_filter( 'gravityflow_permission_granted_entry_detail', array(
@@ -79,6 +87,11 @@ if ( class_exists( 'GFForms' ) ) {
 			}
 		}
 
+		/**
+		 * Front end initialization.
+		 *
+		 * @since 1.0
+		 */
 		public function init_frontend() {
 			parent::init_frontend();
 			add_filter( 'gravityflow_shortcode_folders', array( $this, 'shortcode' ), 10, 2 );
@@ -88,6 +101,11 @@ if ( class_exists( 'GFForms' ) ) {
 			), 10 );
 		}
 
+		/**
+		 * Admin initialization.
+		 *
+		 * @since 1.0
+		 */
 		public function init_admin() {
 			parent::init_admin();
 			if ( $this->current_user_can_any( 'gravityflowfolders_user_admin' ) ) {
@@ -95,6 +113,13 @@ if ( class_exists( 'GFForms' ) ) {
 			}
 		}
 
+		/**
+		 * Adds the scripts using the Gravity Forms Add-On Framework.
+		 *
+		 * @since 1.0
+		 *
+		 * @return array
+		 */
 		public function scripts() {
 			$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG || isset( $_GET['gform_debug'] ) ? '' : '.min';
 
@@ -155,6 +180,14 @@ if ( class_exists( 'GFForms' ) ) {
 			return array_merge( parent::scripts(), $scripts );
 		}
 
+		/**
+		 * Add the styles using the Gravity Forms Add-On Framework.
+		 *
+		 *
+		 * @since 1.0
+		 *
+		 * @return array
+		 */
 		public function styles() {
 			$min    = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG || isset( $_GET['gform_debug'] ) ? '' : '.min';
 			$styles = array(
@@ -202,6 +235,13 @@ if ( class_exists( 'GFForms' ) ) {
 		}
 
 
+		/**
+		 * Adds the fields for the app settings page.
+		 *
+		 * @since 1.0
+		 *
+		 * @return array
+		 */
 		public function app_settings_fields() {
 			$settings   = parent::app_settings_fields();
 			$settings[] = array(
@@ -219,6 +259,16 @@ if ( class_exists( 'GFForms' ) ) {
 		}
 
 
+		/**
+		 * Adds the Folders to the entry meta.
+		 *
+		 * @since 1.0
+		 *
+		 * @param array $entry_meta
+		 * @param int $form_id
+		 *
+		 * @return array
+		 */
 		public function get_entry_meta( $entry_meta, $form_id ) {
 			$folders = $this->get_folders();
 			foreach ( $folders as $folder ) {
@@ -236,6 +286,14 @@ if ( class_exists( 'GFForms' ) ) {
 			return $entry_meta;
 		}
 
+		/**
+		 * Returns the app settings.
+		 *
+		 *
+		 * @since 1.0
+		 *
+		 * @return array
+		 */
 		public function get_folder_settings() {
 			$settings        = $this->get_app_settings();
 			$folder_settings = isset( $settings['folders'] ) ? $settings['folders'] : array();
@@ -243,6 +301,11 @@ if ( class_exists( 'GFForms' ) ) {
 			return $folder_settings;
 		}
 
+		/**
+		 * Renders the folders setting.
+		 *
+		 * since 1.0
+		 */
 		public function settings_folders() {
 			$hidden_field = array(
 				'name'          => 'folders',
@@ -256,6 +319,16 @@ if ( class_exists( 'GFForms' ) ) {
 			<?php
 		}
 
+		/**
+		 * Adds the Folders menu item to the admin UI.
+		 *
+		 *
+		 * @aince 1.0
+		 *
+		 * @param $menu_items
+		 *
+		 * @return array
+		 */
 		public function menu_items( $menu_items ) {
 			$folders_menu = array(
 				'name'       => 'gravityflow-folders',
@@ -275,6 +348,15 @@ if ( class_exists( 'GFForms' ) ) {
 			return $menu_items;
 		}
 
+		/**
+		 * Adds folders to the Gravity Flow toolbar.
+		 *
+		 * @since 1.0
+		 *
+		 * @param $menu_items
+		 *
+		 * @return mixed
+		 */
 		public function toolbar_menu_items( $menu_items ) {
 
 			$active_class     = 'gf_toolbar_active';
@@ -294,6 +376,11 @@ if ( class_exists( 'GFForms' ) ) {
 			return $menu_items;
 		}
 
+		/**
+		 * Renders the folder page in the WordPress admin UI.
+		 *
+		 * @since 1.0
+		 */
 		public function folders() {
 			$args = array(
 				'display_header' => true,
@@ -301,6 +388,13 @@ if ( class_exists( 'GFForms' ) ) {
 			$this->folders_page( $args );
 		}
 
+		/**
+		 * Renders the folders page.
+		 *
+		 * @since 1.0
+		 *
+		 * @param $args
+		 */
 		public function folders_page( $args ) {
 			$defaults = array(
 				'display_header' => true,
@@ -329,11 +423,20 @@ if ( class_exists( 'GFForms' ) ) {
 			<?php
 		}
 
+		/**
+		 * Renders the Gravity Flow toolbar.
+		 *
+		 * @since 1.0
+		 */
 		public function toolbar() {
 			gravity_flow()->toolbar();
 		}
 
 		/**
+		 * Returns an array of folders for the given user.
+		 *
+		 * @since 1.0
+		 *
 		 * @param WP_User|null $user
 		 *
 		 * @return Gravity_Flow_Folder[]
@@ -364,6 +467,8 @@ if ( class_exists( 'GFForms' ) ) {
 		/**
 		 * Get Folder by ID or Name.
 		 *
+		 * @since 1.0
+		 *
 		 * @param string $folder_id
 		 * @param WP_User @user
 		 *
@@ -381,6 +486,16 @@ if ( class_exists( 'GFForms' ) ) {
 			return false;
 		}
 
+		/**
+		 * Returns the entry count per form.
+		 *
+		 * @since 1.0
+		 *
+		 * @param $user_id
+		 * @param $form_ids
+		 *
+		 * @return array|bool|mixed|null|object|string
+		 */
 		public static function get_entry_count_per_form( $user_id, $form_ids ) {
 			global $wpdb;
 			$lead_table_name = GFFormsModel::get_lead_table_name();
@@ -402,6 +517,8 @@ if ( class_exists( 'GFForms' ) ) {
 		/**
 		 * Adds the Folders action item to the User actions.
 		 *
+		 * @since 1.0
+		 *
 		 * @param array $actions An array of action links to be displayed.
 		 *                             Default 'Edit', 'Delete' for single site, and
 		 *                             'Edit', 'Remove' for Multisite.
@@ -419,6 +536,16 @@ if ( class_exists( 'GFForms' ) ) {
 			return array_merge( $new_actions, $actions );
 		}
 
+		/**
+		 * Renders the shortcode.
+		 *
+		 * @since 1.0
+		 *
+		 * @param $html
+		 * @param $atts
+		 *
+		 * @return string
+		 */
 		public function shortcode( $html, $atts ) {
 
 			$a = gravity_flow()->get_shortcode_atts( $atts );
@@ -441,6 +568,8 @@ if ( class_exists( 'GFForms' ) ) {
 
 		/**
 		 * Returns the markup for the folders page.
+		 *
+		 * @since 1.0
 		 *
 		 * @param $a
 		 *
@@ -520,6 +649,8 @@ if ( class_exists( 'GFForms' ) ) {
 		/**
 		 * Returns the markup for the folders shortcode detail page.
 		 *
+		 * @since 1.0
+		 *
 		 * @param $a
 		 *
 		 * @return string
@@ -546,6 +677,20 @@ if ( class_exists( 'GFForms' ) ) {
 			return $html;
 		}
 
+		/**
+		 * Callback for the gravityflow_permission_granted_entry_detail filter.
+		 *
+		 * Grants access to the specified entry if the current user has permission to view the entry.
+		 *
+		 * @since 1.0
+		 *
+		 * @param $permission_granted
+		 * @param $entry
+		 * @param $form
+		 * @param $current_step
+		 *
+		 * @return bool
+		 */
 		public function filter_gravityflow_permission_granted_entry_detail( $permission_granted, $entry, $form, $current_step ) {
 			if ( ! $permission_granted ) {
 				if ( isset( $_GET['folder'] ) ) {
@@ -572,6 +717,13 @@ if ( class_exists( 'GFForms' ) ) {
 			return $permission_granted;
 		}
 
+		/**
+		 * Returns user accounts as choices for settings.
+		 *
+		 * @since 1.0
+		 *
+		 * @return array
+		 */
 		public function get_users_as_choices() {
 			$editable_roles = array_reverse( get_editable_roles() );
 
@@ -606,11 +758,29 @@ if ( class_exists( 'GFForms' ) ) {
 			return is_admin() && rgget( 'page' ) == 'gravityflow_settings' && rgget( 'view' ) == 'gravityflowfolders';
 		}
 
+		/**
+		 * Callback for the gravityflow_enqueue_frontend_scripts action.
+		 *
+		 * Adds the front end styles.
+		 *
+		 * @since 1.0
+		 */
 		public function action_gravityflow_enqueue_frontend_scripts() {
 			$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG || isset( $_GET['gform_debug'] ) ? '' : '.min';
 			wp_enqueue_style( 'gravityflowfolders_folders', $this->get_base_url() . "/css/folders{$min}.css", null, $this->_version );
 		}
 
+		/**
+		 * Callback for the gravityflow_status_args filter.
+		 *
+		 * Adds the folder bulk actions to the status page.
+		 *
+		 * @since 1.0
+		 *
+		 * @param $args
+		 *
+		 * @return mixed
+		 */
 		public function filter_gravityflow_status_args( $args ) {
 			$folders = $this->get_folders();
 			if ( empty( $folders ) ) {
@@ -625,6 +795,20 @@ if ( class_exists( 'GFForms' ) ) {
 			return $args;
 		}
 
+		/**
+		 * Callback for the gravityflow_bulk_action_status_table filter.
+		 *
+		 * Fulfills the bulk action on the status page by adding entries to the folder.
+		 *
+		 * @since 1.0
+		 *
+		 * @param $feedback
+		 * @param $bulk_action
+		 * @param $entry_ids
+		 * @param $args
+		 *
+		 * @return string
+		 */
 		public function filter_gravityflow_bulk_action_status_table( $feedback, $bulk_action, $entry_ids, $args ) {
 			if ( strpos( $bulk_action, 'add_to_folder_' ) === false ) {
 				return '';
@@ -645,6 +829,21 @@ if ( class_exists( 'GFForms' ) ) {
 			return $message;
 		}
 
+		/**
+		 * Callback for the gravityflow_admin_actions_workflow_detail filter.
+		 *
+		 * Adds the folder options for the admin actions on the workflow detail page.
+		 *
+		 * @since 1.0
+		 *
+		 * @param $admin_actions
+		 * @param $current_step
+		 * @param $steps
+		 * @param $form
+		 * @param $entry
+		 *
+		 * @return array
+		 */
 		public function filter_gravityflow_admin_actions_workflow_detail( $admin_actions, $current_step, $steps, $form, $entry ) {
 			$folders = $this->get_folders();
 
@@ -691,6 +890,8 @@ if ( class_exists( 'GFForms' ) ) {
 		/**
 		 * Process the entry detail admin actions for folders.
 		 *
+		 * @since 1.0
+		 *
 		 * @param $feedback
 		 * @param $admin_action
 		 * @param $form
@@ -719,6 +920,14 @@ if ( class_exists( 'GFForms' ) ) {
 			return $feedback;
 		}
 
+		/**
+		 * Callback for the gravityflow_pre_restart_workflow action.
+		 *
+		 * Removes entries from all folders when the workflow is restarted.
+		 *
+		 * @param $entry
+		 * @param $form
+		 */
 		public function action_gravityflow_pre_restart_workflow( $entry, $form ) {
 			$folders = $this->get_folders();
 			foreach ( $folders as $folder ) {

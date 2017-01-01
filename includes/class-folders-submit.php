@@ -6,6 +6,10 @@ if ( ! class_exists( 'GFForms' ) ) {
 
 class Gravity_Flow_Folders_Submit {
 	/**
+	 * Renders the submit page.
+	 *
+	 * @since 1.0
+	 *
 	 * @param $form_id
 	 * @param Gravity_Flow_Folder $folder
 	 * @param array $args

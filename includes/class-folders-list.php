@@ -7,6 +7,10 @@ if ( ! class_exists( 'GFForms' ) ) {
 class Gravity_Flow_Folders_List {
 
 	/**
+	 * Renders the list of folders.
+	 *
+	 * @since 1.0
+	 *
 	 * @param Gravity_Flow_Folder[] $folders
 	 * @param WP_User $user
 	 */

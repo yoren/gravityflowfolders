@@ -16,10 +16,24 @@ if ( class_exists( 'Gravity_Flow_Step' ) ) {
 	class Gravity_Flow_Step_Folders_Remove extends Gravity_Flow_Step {
 		public $_step_type = 'folders_remove';
 
+		/**
+		 * Returns the label.
+		 *
+		 * @since 1.0
+		 *
+		 * @return string
+		 */
 		public function get_label() {
 			return esc_html__( 'Remove from Folder', 'gravityflowfolders' );
 		}
 
+		/**
+		 * Returns the url/icon for the step.
+		 *
+		 * @since 1.0
+		 *
+		 * @return string
+		 */
 		public function get_icon_url() {
 			return '<i class="fa fa fa-folder-o" style="color:darkgreen"></i>';
 		}
@@ -70,10 +84,24 @@ if ( class_exists( 'Gravity_Flow_Step' ) ) {
 			);
 		}
 
+		/**
+		 * Returns all the folders.
+		 *
+		 * @since 1.0
+		 *
+		 * @return Gravity_Flow_Folder[]
+		 */
 		public function get_folders() {
 			return gravity_flow_folders()->get_folders();
 		}
 
+		/**
+		 * Processes this step.
+		 *
+		 * @since 1.0
+		 *
+		 * @return bool
+		 */
 		function process() {
 			// add to folders
 
