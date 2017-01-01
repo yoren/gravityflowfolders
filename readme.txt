@@ -21,8 +21,8 @@ Facebook: [Steven Henty](https://www.facebook.com/gravityflow.io)
 1. [Purchase and install Gravity Forms](https://gravityflow.io/gravityforms)
 1. [Purchase and install Gravity Flow](https://gravityflow.io)
 1. Wordpress 4.3+
-1. Gravity Forms 1.9.4+
-1. Gravity Flow 1.4.1+
+1. Gravity Forms 2.0+
+1. Gravity Flow 1.4+
 
 
 = Support =
@@ -44,20 +44,5 @@ The Gravity Flow Folders Extension will work with any license of [Gravity Flow](
 
 == ChangeLog ==
 
-= 1.0-beta-2.3 =
-- Remove entry from all folders on workflow restart. Requires Gravity Flow 1.4.3.
-
-= 1.0-beta-2.2 =
-- Fixed form shortcode attribute.
-
-= 1.0-beta-2.1 =
-- Fixed shortcode attributes.
-
-= 1.0-beta-2 =
-- Removed checklists.
-
-= 1.0-beta-1.1 =
-- Added support for shortocde attributes.
-
-= 1.0-beta-1 =
+= 1.0 =
 All new!
