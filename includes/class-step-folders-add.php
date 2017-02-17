@@ -112,7 +112,7 @@ if ( class_exists( 'Gravity_Flow_Step' ) ) {
 					$entry_id = $this->get_entry_id();
 					$folder->add_entry( $entry_id );
 					$label = $folder->get_name();
-					$note = sprintf( esc_html__( 'Added to folder: %s', 'gravityflow' ), $label );
+					$note  = sprintf( esc_html__( 'Added to folder: %s', 'gravityflow' ), $label );
 					$this->add_note( $note, 0, $this->get_type() );
 				}
 			}

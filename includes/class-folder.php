@@ -37,14 +37,14 @@ abstract class Gravity_Flow_Folder {
 	protected $type;
 
 	public function __construct( $config, WP_User $user = null ) {
-		$this->id = $config['id'];
-		$this->name = $config['name'];
+		$this->id   = rgar( $config, 'id' );
+		$this->name = rgar( $config, 'name' );
 
 		if ( empty( $user ) ) {
 			$user = wp_get_current_user();
 		}
-		$this->user = $user;
-		$this->type = $config['type'];
+		$this->user   = $user;
+		$this->type   = rgar( $config, 'type' );
 		$this->config = $config;
 	}
 
@@ -63,6 +63,7 @@ abstract class Gravity_Flow_Folder {
 		if ( $echo ) {
 			echo $icon;
 		}
+
 		return $icon;
 	}
 
