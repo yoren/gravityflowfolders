@@ -44,8 +44,5 @@ The Gravity Flow Folders Extension will work with any license of [Gravity Flow](
 
 == ChangeLog ==
 
-= 1.0.1 =
-Fixed a PHP notice which could occur when getting the folders.
-
 = 1.0 =
 All new!
