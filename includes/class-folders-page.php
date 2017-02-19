@@ -14,7 +14,6 @@ class Gravity_Flow_Folders_Page {
 		$defaults = array(
 			'user_id' => absint( rgget( 'user_id' ) ),
 			'folder'  => sanitize_text_field( rgget( 'folder' ) ),
-			'form_id' => absint( rgget( 'id' ) ),
 		);
 
 		$args = array_merge( $defaults, $args );
@@ -32,14 +31,8 @@ class Gravity_Flow_Folders_Page {
 
 			$folder = gravity_flow_folders()->get_folder( $folder_id, $user );
 			if ( $folder ) {
-				$form_id = $args['form_id'];
-				if ( empty( $form_id ) ) {
-					require_once( gravity_flow_folders()->get_base_path() . '/includes/class-folders-detail.php' );
-					Gravity_Flow_Folders_Detail::display( $folder, $args );
-				} else {
-					require_once( gravity_flow_folders()->get_base_path() . '/includes/class-folders-submit.php' );
-					Gravity_Flow_Folders_Submit::render_form( $form_id, $folder, $args );
-				}
+				require_once( gravity_flow_folders()->get_base_path() . '/includes/class-folders-detail.php' );
+				Gravity_Flow_Folders_Detail::display( $folder, $args );
 			} else {
 				esc_html_e( 'Folder not found.', 'gravityflow' );
 			}

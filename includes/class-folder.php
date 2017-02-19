@@ -36,6 +36,12 @@ abstract class Gravity_Flow_Folder {
 	 */
 	protected $type;
 
+	/**
+	 * Gravity_Flow_Folder constructor.
+	 *
+	 * @param               $config
+	 * @param \WP_User|null $user
+	 */
 	public function __construct( $config, WP_User $user = null ) {
 		$this->id   = rgar( $config, 'id' );
 		$this->name = rgar( $config, 'name' );
@@ -54,12 +60,13 @@ abstract class Gravity_Flow_Folder {
 	 *
 	 * @since 1.0
 	 *
+	 * @param int $size
 	 * @param bool $echo
 	 *
 	 * @return string
 	 */
 	public function icon( $size = 1, $echo = true ) {
-		$icon = '<i class="fa fa-folder-o fa-stack-2x"></i>';
+		$icon = sprintf( '<i class="gravityflowfolders-folder fa fa-folder-o fa-%dx"></i>', $size );
 		if ( $echo ) {
 			echo $icon;
 		}

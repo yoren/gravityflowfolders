@@ -11,11 +11,6 @@ import SelectField from './components/repeater/select';
 import TextField from './components/repeater/text';
 import TextAreaField from './components/repeater/textarea';
 
-class FormNodes extends RepeaterItem {
-	render() {
-		return <SelectField settingName="form_id" value={this.props.item.form_id} choices={this.props.forms} />
-	}
-}
 
 class FolderSettings extends RepeaterItem {
 
@@ -31,32 +26,6 @@ class FolderSettings extends RepeaterItem {
 
 	render(){
 		const strings = this.props.strings;
-
-		var checklistSettings = '';
-
-		if ( this.props.item.type == 'checklist' ) {
-			checklistSettings = (<div>
-									<Repeater
-										label={strings.forms}
-										stateful={false}
-										settingName="nodes"
-										value={this.props.item.nodes}
-										strings={strings}
-										minItems={1}
-										defaultValues={function(){
-												return {
-														id: shortid.generate(),
-														form_id: '',
-														custom_label: ''
-														}
-													}
-												}
-									>
-										<FormNodes strings={strings} forms={strings.vars.forms}/>
-									</Repeater>
-									<CheckboxField settingName="sequential" checked={this.props.item.sequential} label={strings.sequential}/>
-								</div>)
-		}
 
 		const permissionsRadioChoices = [
 			{
@@ -82,7 +51,7 @@ class FolderSettings extends RepeaterItem {
 
 			settings = (<div className="gravityflow-folder-settings">
 				<TextField settingName="name" value={this.props.item.name} label={strings.folderName} />
-				{checklistSettings}<br />
+				<br />
 				Permissions<br />
 				<RadioGroupField settingName="permissions" value={this.props.item.permissions} choices={permissionsRadioChoices} horizontal={true} />
 				{selectUsers}
