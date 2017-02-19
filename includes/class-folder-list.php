@@ -12,6 +12,7 @@ if ( ! class_exists( 'GFForms' ) ) {
 class Gravity_Flow_Folder_List extends Gravity_Flow_Folder {
 
 	/**
+	 * @param int $size
 	 * @param bool $echo
 	 *
 	 * @return string
