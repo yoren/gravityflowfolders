@@ -80,17 +80,8 @@ jQuery(document).ready(function () {
 				return {
 					id: shortid.generate(),
 					name: strings.defaultFolderName,
-					sequential: true,
-					assignees: [],
 					permissions: 'all',
-					nodes:
-						[
-							{
-								id: shortid.generate(),
-								form_id: '',
-								custom_label: ''
-							}
-						]
+					assignees: []
 			}	}}
 			onChange={_updateFieldJSON}
 			strings={gravityflowfolders_settings_js_strings}

@@ -885,36 +885,17 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var FormNodes = function (_RepeaterItem) {
-	_inherits(FormNodes, _RepeaterItem);
-
-	function FormNodes() {
-		_classCallCheck(this, FormNodes);
-
-		return _possibleConstructorReturn(this, Object.getPrototypeOf(FormNodes).apply(this, arguments));
-	}
-
-	_createClass(FormNodes, [{
-		key: 'render',
-		value: function render() {
-			return _react2.default.createElement(_select2.default, { settingName: 'form_id', value: this.props.item.form_id, choices: this.props.forms });
-		}
-	}]);
-
-	return FormNodes;
-}(_item2.default);
-
-var FolderSettings = function (_RepeaterItem2) {
-	_inherits(FolderSettings, _RepeaterItem2);
+var FolderSettings = function (_RepeaterItem) {
+	_inherits(FolderSettings, _RepeaterItem);
 
 	function FolderSettings(props) {
 		_classCallCheck(this, FolderSettings);
 
-		var _this2 = _possibleConstructorReturn(this, Object.getPrototypeOf(FolderSettings).call(this, props));
+		var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(FolderSettings).call(this, props));
 
-		_this2.state = { isOpen: false };
-		_this2._toggle = _this2._toggle.bind(_this2);
-		return _this2;
+		_this.state = { isOpen: false };
+		_this._toggle = _this._toggle.bind(_this);
+		return _this;
 	}
 
 	_createClass(FolderSettings, [{
@@ -926,35 +907,6 @@ var FolderSettings = function (_RepeaterItem2) {
 		key: 'render',
 		value: function render() {
 			var strings = this.props.strings;
-
-			var checklistSettings = '';
-
-			if (this.props.item.type == 'checklist') {
-				checklistSettings = _react2.default.createElement(
-					'div',
-					null,
-					_react2.default.createElement(
-						_repeater2.default,
-						{
-							label: strings.forms,
-							stateful: false,
-							settingName: 'nodes',
-							value: this.props.item.nodes,
-							strings: strings,
-							minItems: 1,
-							defaultValues: function defaultValues() {
-								return {
-									id: _shortid2.default.generate(),
-									form_id: '',
-									custom_label: ''
-								};
-							}
-						},
-						_react2.default.createElement(FormNodes, { strings: strings, forms: strings.vars.forms })
-					),
-					_react2.default.createElement(_checkbox2.default, { settingName: 'sequential', checked: this.props.item.sequential, label: strings.sequential })
-				);
-			}
 
 			var permissionsRadioChoices = [{
 				value: 'all',
@@ -978,7 +930,6 @@ var FolderSettings = function (_RepeaterItem2) {
 					'div',
 					{ className: 'gravityflow-folder-settings' },
 					_react2.default.createElement(_text2.default, { settingName: 'name', value: this.props.item.name, label: strings.folderName }),
-					checklistSettings,
 					_react2.default.createElement('br', null),
 					'Permissions',
 					_react2.default.createElement('br', null),
@@ -1021,14 +972,8 @@ jQuery(document).ready(function () {
 				return {
 					id: _shortid2.default.generate(),
 					name: strings.defaultFolderName,
-					sequential: true,
-					assignees: [],
 					permissions: 'all',
-					nodes: [{
-						id: _shortid2.default.generate(),
-						form_id: '',
-						custom_label: ''
-					}]
+					assignees: []
 				};
 			},
 			onChange: _updateFieldJSON,

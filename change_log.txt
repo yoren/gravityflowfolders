@@ -1,2 +1,2 @@
-
+- Added logging statements.
 - Fixed a PHP notice which could occur when getting the folders.

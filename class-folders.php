@@ -692,6 +692,7 @@ if ( class_exists( 'GFForms' ) ) {
 		 * @return bool
 		 */
 		public function filter_gravityflow_permission_granted_entry_detail( $permission_granted, $entry, $form, $current_step ) {
+			$this->log_debug( __METHOD__ . '(): starting. $permission_granted: ' . ( $permission_granted ? 'yes' : 'no' ) );
 			if ( ! $permission_granted ) {
 				if ( isset( $_GET['folder'] ) ) {
 					$folder_id = sanitize_text_field( $_GET['folder'] );
@@ -699,6 +700,7 @@ if ( class_exists( 'GFForms' ) ) {
 						$folder = $this->get_folder( $folder_id );
 						if ( $folder->user_has_permission() ) {
 							$permission_granted = true;
+							$this->log_debug( __METHOD__ . '(): User has permission to view entries in folder ID: ' . $folder->get_id() );
 						}
 					}
 				} else {
@@ -707,12 +709,15 @@ if ( class_exists( 'GFForms' ) ) {
 						if ( ! empty( $entry[ 'workflow_folder_' . $folder->get_id() ] ) ) {
 							if ( $folder->user_has_permission() ) {
 								$permission_granted = true;
+								$this->log_debug( __METHOD__ . '(): User has permission to view entries in folder ID: ' . $folder->get_id() );
 								break;
 							}
 						}
 					}
 				}
 			}
+
+			$this->log_debug( __METHOD__ . '(): ending. $permission_granted: ' . ( $permission_granted ? 'yes' : 'no' ) );
 
 			return $permission_granted;
 		}
