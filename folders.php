@@ -3,7 +3,7 @@
 Plugin Name: Gravity Flow Folders
 Plugin URI: http://gravityflow.io
 Description: Folders Extension for Gravity Flow.
-Version: 1.0.2
+Version: 1.1-dev
 Author: Steve Henty
 Author URI: http://gravityflow.io
 License: GPL-3.0+
