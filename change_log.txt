@@ -1,2 +1,3 @@
 - Added logging statements.
 - Fixed a PHP notice which could occur when getting the folders.
+- Fixed an issue with the shortcode where entries in the folder may not be displayed.

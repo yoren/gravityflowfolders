@@ -610,7 +610,7 @@ if ( class_exists( 'GFForms' ) ) {
 				'display_header'     => false,
 				'action_url'         => 'http' . ( isset( $_SERVER['HTTPS'] ) ? 's' : '' ) . '://' . "{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}?",
 				'field_ids'          => $a['fields'] ? explode( ',', $a['fields'] ) : '',
-				'display_all'        => $a['display_all'],
+				'display_all'        => true, // Display others' entries
 				'id_column'          => $a['id_column'],
 				'submitter_column'   => $a['submitter_column'],
 				'step_column'        => $a['step_column'],
