@@ -486,32 +486,19 @@ if ( class_exists( 'GFForms' ) ) {
 			return false;
 		}
 
-		/**
-		 * Returns the entry count per form.
-		 *
-		 * @since 1.0
-		 *
-		 * @param $user_id
-		 * @param $form_ids
-		 *
-		 * @return array|bool|mixed|null|object|string
-		 */
-		public static function get_entry_count_per_form( $user_id, $form_ids ) {
-			global $wpdb;
-			$lead_table_name = GFFormsModel::get_lead_table_name();
+		public static function get_entry_table_name() {
+			return version_compare( self::get_gravityforms_db_version(), '2.3-dev-1', '<' ) ? GFFormsModel::get_lead_table_name() : GFFormsModel::get_entry_table_name();
+		}
 
-			$cache_key = 'folders:entries_by_form_by_user_' . $user_id;
+		public static function get_gravityforms_db_version() {
 
-			$entry_count = GFCache::get( $cache_key );
-			if ( empty( $entry_count ) ) {
-				//Getting entry count per form
-				$sql         = $wpdb->prepare( "SELECT form_id, count(id) as lead_count FROM $lead_table_name l WHERE status='active' AND created_by = %d GROUP BY form_id", $user_id );
-				$entry_count = $wpdb->get_results( $sql );
-
-				GFCache::set( $cache_key, $entry_count, true, 60 );
+			if ( method_exists( 'GFFormsModel', 'get_database_version' ) ) {
+				$db_version = GFFormsModel::get_database_version();
+			} else {
+				$db_version = GFForms::$version;
 			}
 
-			return $entry_count;
+			return $db_version;
 		}
 
 		/**
@@ -581,7 +568,7 @@ if ( class_exists( 'GFForms' ) ) {
 			}
 			require_once( ABSPATH . 'wp-admin/includes/template.php' );
 
-			$check_permissions = true;
+				$check_permissions = true;
 
 			if ( $a['allow_anonymous'] || $a['display_all'] ) {
 				$check_permissions = false;

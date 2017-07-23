@@ -29,7 +29,7 @@ class Gravity_Flow_Folders_Detail {
 			return;
 		}
 
-		$list_url = remove_query_arg( 'folder' );
+		$list_url = remove_query_arg( array( 'folder', 'id' ) );
 		if ( $args['breadcrumbs'] ) {
 		?>
 		<h2>

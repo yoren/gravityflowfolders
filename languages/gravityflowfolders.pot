@@ -1,9 +1,9 @@
 # Copyright 2015-2017 Steven Henty.
 msgid ""
 msgstr ""
-"Project-Id-Version: Gravity Flow Folders 1.0.0\n"
+"Project-Id-Version: Gravity Flow Folders 1.1-dev\n"
 "Report-Msgid-Bugs-To: https://www.gravityflow.io\n"
-"POT-Creation-Date: 2017-01-01 20:49:25+00:00\n"
+"POT-Creation-Date: 2017-07-23 19:54:44+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -81,8 +81,8 @@ msgid "Configuration"
 msgstr ""
 
 #: class-folders.php:252 class-folders.php:335 class-folders.php:366
-#: class-folders.php:368 class-folders.php:412 class-folders.php:534
-#: class-folders.php:873 includes/class-folders-detail.php:43
+#: class-folders.php:368 class-folders.php:412 class-folders.php:521
+#: class-folders.php:865 includes/class-folders-detail.php:43
 #: includes/class-step-folders-add.php:66
 #: includes/class-step-folders-add.php:76
 #: includes/class-step-folders-remove.php:65
@@ -90,40 +90,40 @@ msgstr ""
 msgid "Folders"
 msgstr ""
 
-#: class-folders.php:745 includes/class-folders-detail.php:39
+#: class-folders.php:737 includes/class-folders-detail.php:39
 #: includes/class-folders-list.php:21
 msgid "Users"
 msgstr ""
 
-#: class-folders.php:749
+#: class-folders.php:741
 msgid "Roles"
 msgstr ""
 
-#: class-folders.php:791
+#: class-folders.php:783
 msgid "Add to folder: %s"
 msgstr ""
 
-#: class-folders.php:827
+#: class-folders.php:819
 msgid "Entries assigned to folder: %s."
 msgstr ""
 
-#: class-folders.php:876
+#: class-folders.php:868
 msgid "Add to folder"
 msgstr ""
 
-#: class-folders.php:880
+#: class-folders.php:872
 msgid "Remove from folder"
 msgstr ""
 
-#: class-folders.php:909
+#: class-folders.php:901
 msgid "Entry added to folder: %s"
 msgstr ""
 
-#: class-folders.php:913
+#: class-folders.php:905
 msgid "Entry removed from folder: %s"
 msgstr ""
 
-#: includes/class-folder.php:147
+#: includes/class-folder.php:155
 msgid "Method '%s' not implemented. Must be over-ridden in subclass."
 msgstr ""
 
@@ -131,11 +131,11 @@ msgstr ""
 msgid "You don't have permission to view this folder"
 msgstr ""
 
-#: includes/class-folders-page.php:44
+#: includes/class-folders-page.php:37
 msgid "Folder not found."
 msgstr ""
 
-#: includes/class-folders-page.php:52
+#: includes/class-folders-page.php:45
 msgid "You don't have any folders configured."
 msgstr ""
 

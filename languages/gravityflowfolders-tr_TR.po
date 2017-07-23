@@ -1,19 +1,19 @@
 # Copyright 2015-2017 Steven Henty.
 # Translators:
-# Reham Ahmad <riham_roushdy@hotmail.com>, 2016
+# Süha Karalar <suhakaralar@gmail.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: gravityflowfolders\n"
 "Report-Msgid-Bugs-To: https://www.gravityflow.io\n"
 "POT-Creation-Date: 2017-01-01 20:49:25+00:00\n"
 "PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Reham Ahmad <riham_roushdy@hotmail.com>, 2016\n"
-"Language-Team: Arabic (https://www.transifex.com/gravityflow/teams/50678/ar/)\n"
+"Last-Translator: Süha Karalar <suhakaralar@gmail.com>, 2017\n"
+"Language-Team: Turkish (Turkey) (https://www.transifex.com/gravityflow/teams/50678/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ar\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"Language: tr_TR\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Gravity Flow Build Script\n"
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-Bookmarks: \n"
@@ -25,59 +25,59 @@ msgstr ""
 
 #: class-folders.php:129
 msgid "Select a form"
-msgstr "اختر نموذجاً"
+msgstr "Bir form seçiniz"
 
 #: class-folders.php:151
 msgid "Name"
-msgstr "الاسم"
+msgstr "İsim"
 
 #: class-folders.php:152
 msgid "Custom Label"
-msgstr "علامة مخصصة"
+msgstr "Özel Etiket"
 
 #: class-folders.php:153
 msgid "Forms"
-msgstr "النماذج"
+msgstr "Formlar"
 
 #: class-folders.php:154
 msgid "Entry List"
-msgstr "قائمة المُدخلات"
+msgstr "Kayıt Listesi"
 
 #: class-folders.php:155
 msgid "Personal Checklist"
-msgstr "قائمة التدقيق الذاتية"
+msgstr "Kişisel denetim listesi"
 
 #: class-folders.php:156
 msgid "Sequential"
-msgstr "تسلسلي"
+msgstr "Sıralı"
 
 #: class-folders.php:157
 msgid "You don't have any folders."
-msgstr "ليس لديك أي مجلدات"
+msgstr "Herhangi bir klasörünüz yok."
 
 #: class-folders.php:158
 msgid "Let's add one"
-msgstr "فلنضف واحدًا"
+msgstr "Bir tane ekleyelim"
 
 #: class-folders.php:159
 msgid "This item will be deleted. Are you sure?"
-msgstr "سيتم حذف العنصر . هل أنت متأكد؟"
+msgstr "Bu nesne silinecektir. Emin misiniz?"
 
 #: class-folders.php:160
 msgid "New Folder"
-msgstr "مجلد جديد"
+msgstr "Yeni Klasör"
 
 #: class-folders.php:161
 msgid "All Users"
-msgstr "كل المستخدمين"
+msgstr "Tüm Kullanıcılar"
 
 #: class-folders.php:162
 msgid "Select Users"
-msgstr "اختر المستخدمين"
+msgstr "Kullanıcı Seç"
 
 #: class-folders.php:248
 msgid "Configuration"
-msgstr "إعداد"
+msgstr "Yapılandırma"
 
 #: class-folders.php:252 class-folders.php:335 class-folders.php:366
 #: class-folders.php:368 class-folders.php:412 class-folders.php:534
@@ -87,90 +87,90 @@ msgstr "إعداد"
 #: includes/class-step-folders-remove.php:65
 #: includes/class-step-folders-remove.php:75
 msgid "Folders"
-msgstr "مجلدات"
+msgstr "Klasörler"
 
 #: class-folders.php:745 includes/class-folders-detail.php:39
 #: includes/class-folders-list.php:21
 msgid "Users"
-msgstr "المستخدمون"
+msgstr "Kullanıcılar"
 
 #: class-folders.php:749
 msgid "Roles"
-msgstr "الأدوار"
+msgstr "Roller"
 
 #: class-folders.php:791
 msgid "Add to folder: %s"
-msgstr "أضف إلي مجلد"
+msgstr "%s klasörüne ekle"
 
 #: class-folders.php:827
 msgid "Entries assigned to folder: %s."
-msgstr "تم نقل المدخلات إلى المجلد"
+msgstr "%s Klasörüne atanmış kayıtlar."
 
 #: class-folders.php:876
 msgid "Add to folder"
-msgstr "أضف إلي مجلد"
+msgstr "Klasöre ekle"
 
 #: class-folders.php:880
 msgid "Remove from folder"
-msgstr "نقل من مجلد"
+msgstr "Klasörden çıkar"
 
 #: class-folders.php:909
 msgid "Entry added to folder: %s"
-msgstr "تم إضافة المدخل إلى المجلد"
+msgstr "Kayıt %s klasörüne eklenmiştir"
 
 #: class-folders.php:913
 msgid "Entry removed from folder: %s"
-msgstr "تم نقل المدخل من المجلد"
+msgstr "Kayıt %s klasöründen çıkarılmıştır"
 
 #: includes/class-folder.php:147
 msgid "Method '%s' not implemented. Must be over-ridden in subclass."
-msgstr ""
+msgstr "Yöntem ‘%s’ uygulanmadı. Alt sınıfta tanımlanmış olmalı."
 
 #: includes/class-folders-detail.php:28
 msgid "You don't have permission to view this folder"
-msgstr "ليس لديك إذن الاطلاع على هذا المجلد"
+msgstr "Bu klasörü görüntüleme izniniz yok"
 
 #: includes/class-folders-page.php:44
 msgid "Folder not found."
-msgstr "لم يتم العثور على المجلد"
+msgstr "Klasör bulunamadı."
 
 #: includes/class-folders-page.php:52
 msgid "You don't have any folders configured."
-msgstr "ليس لديك أية مجلدات مُعدَّة"
+msgstr "Yapılandırılmış herhangi bir klasörünüz yok."
 
 #: includes/class-step-folders-add.php:28
 msgid "Add to Folder"
-msgstr "أضف إلى مجلد"
+msgstr "Klasöre ekle"
 
 #: includes/class-step-folders-add.php:73
 #: includes/class-step-folders-remove.php:72
 msgid "You don't have any folders set up."
-msgstr "ليس لديك أية مجلدات قائمة"
+msgstr "Oluşturulmuş bir klasörünüz yok."
 
 #: includes/class-step-folders-add.php:115
 msgid "Added to folder: %s"
-msgstr "تمت الإضافة للمجلد"
+msgstr "%s klasörüne eklendi"
 
 #: includes/class-step-folders-remove.php:27
 msgid "Remove from Folder"
-msgstr "نقل من مجلد"
+msgstr "Klasörüden Çıkar"
 
 #: includes/class-step-folders-remove.php:116
 msgid "Removed from folder: %s"
-msgstr "تم النقل من مجلد"
+msgstr "%s klasöründen çıkarıldı"
 
 #. Plugin Name of the plugin/theme
 msgid "Gravity Flow Folders"
-msgstr "مجلدات Gravity Flow"
+msgstr "Gravity Flow Klasörler"
 
 #. Author URI of the plugin/theme
 msgid "http://gravityflow.io"
-msgstr ""
+msgstr "http://gravityflow.io"
 
 #. Description of the plugin/theme
 msgid "Folders Extension for Gravity Flow."
-msgstr "امتداد مجلدات Gravity Flow"
+msgstr "Gravity Flow için klasörler uzantısı."
 
 #. Author of the plugin/theme
 msgid "Steve Henty"
-msgstr ""
+msgstr "Steven Henty"

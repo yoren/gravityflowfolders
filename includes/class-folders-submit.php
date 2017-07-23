@@ -15,7 +15,7 @@ class Gravity_Flow_Folders_Submit {
 	 * @param array $args
 	 */
 	public static function render_form( $form_id, $folder, $args ) {
-		$list_url   = remove_query_arg( 'folder' );
+		$list_url   = remove_query_arg( array( 'folder', 'id' ) );
 		$folder_url = remove_query_arg( 'id' );
 		$defaults   = array(
 			'breadcrumbs' => true,
