@@ -72,16 +72,10 @@ if ( class_exists( 'GFForms' ) ) {
 		 */
 		public function init() {
 			parent::init();
-			add_filter( 'gravityflow_permission_granted_entry_detail', array(
-				$this,
-				'filter_gravityflow_permission_granted_entry_detail'
-			), 10, 4 );
+			add_filter( 'gravityflow_permission_granted_entry_detail', array( $this, 'filter_gravityflow_permission_granted_entry_detail' ), 10, 4 );
 			if ( GFAPI::current_user_can_any( 'gravityflow_workflow_detail_admin_actions' ) ) {
 				add_filter( 'gravityflow_status_args', array( $this, 'filter_gravityflow_status_args' ) );
-				add_filter( 'gravityflow_bulk_action_status_table', array(
-					$this,
-					'filter_gravityflow_bulk_action_status_table'
-				), 10, 4 );
+				add_filter( 'gravityflow_bulk_action_status_table', array( $this, 'filter_gravityflow_bulk_action_status_table' ), 10, 4 );
 				add_filter( 'gravityflow_admin_actions_workflow_detail', array( $this, 'filter_gravityflow_admin_actions_workflow_detail' ), 10, 5 );
 				add_filter( 'gravityflow_admin_action_feedback', array( $this, 'filter_gravityflow_admin_action_feedback' ), 10, 4 );
 			}
@@ -95,10 +89,7 @@ if ( class_exists( 'GFForms' ) ) {
 		public function init_frontend() {
 			parent::init_frontend();
 			add_filter( 'gravityflow_shortcode_folders', array( $this, 'shortcode' ), 10, 2 );
-			add_filter( 'gravityflow_enqueue_frontend_scripts', array(
-				$this,
-				'action_gravityflow_enqueue_frontend_scripts'
-			), 10 );
+			add_filter( 'gravityflow_enqueue_frontend_scripts', array( $this, 'action_gravityflow_enqueue_frontend_scripts' ) );
 		}
 
 		/**
@@ -285,7 +276,7 @@ if ( class_exists( 'GFForms' ) ) {
 		 * @since 1.0
 		 *
 		 * @param array $entry_meta
-		 * @param int $form_id
+		 * @param int   $form_id
 		 *
 		 * @return array
 		 */
@@ -343,7 +334,7 @@ if ( class_exists( 'GFForms' ) ) {
 		 * Adds the Folders menu item to the admin UI.
 		 *
 		 *
-		 * @aince 1.0
+		 * @since 1.0
 		 *
 		 * @param $menu_items
 		 *
@@ -490,7 +481,7 @@ if ( class_exists( 'GFForms' ) ) {
 		 * @since 1.0
 		 *
 		 * @param string $folder_id
-		 * @param WP_User @user
+		 * @param        WP_User @user
 		 *
 		 * @return bool|Gravity_Flow_Folder
 		 */
@@ -535,7 +526,6 @@ if ( class_exists( 'GFForms' ) ) {
 		 */
 		public function filter_user_row_actions( $actions, $user_object ) {
 
-			$user_object->ID;
 			$url                             = admin_url( 'admin.php?page=gravityflow-folders&user_id=' . $user_object->ID );
 			$url                             = esc_url_raw( $url );
 			$new_actions['workflow_folders'] = "<a href='" . $url . "'>" . __( 'Folders' ) . '</a>';
@@ -588,7 +578,7 @@ if ( class_exists( 'GFForms' ) ) {
 			}
 			require_once( ABSPATH . 'wp-admin/includes/template.php' );
 
-				$check_permissions = true;
+			$check_permissions = true;
 
 			if ( $a['allow_anonymous'] || $a['display_all'] ) {
 				$check_permissions = false;
@@ -597,7 +587,7 @@ if ( class_exists( 'GFForms' ) ) {
 			$detail_base_url = add_query_arg( array( 'page' => 'gravityflow-inbox', 'view' => 'entry' ) );
 
 			$args = array(
-				'base_url'           => remove_query_arg( array(
+				'base_url'          => remove_query_arg( array(
 					'entry-id',
 					'form-id',
 					'start-date',
@@ -613,20 +603,20 @@ if ( class_exists( 'GFForms' ) ) {
 					'gravityflow-print-page-break',
 					'gravityflow-print-timelines',
 				) ),
-				'detail_base_url'    => $detail_base_url,
-				'display_header'     => false,
-				'action_url'         => 'http' . ( isset( $_SERVER['HTTPS'] ) ? 's' : '' ) . '://' . "{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}?",
-				'field_ids'          => $a['fields'] ? explode( ',', $a['fields'] ) : array(),
-				'display_all'        => true, // Display others' entries
-				'id_column'          => $a['id_column'],
-				'submitter_column'   => $a['submitter_column'],
-				'step_column'        => $a['step_column'],
-				'status_column'      => $a['status_column'],
-				'last_updated'       => $a['last_updated'],
-				'step_status'        => $a['step_status'],
-				'workflow_info'      => $a['workflow_info'],
-				'sidebar'            => $a['sidebar'],
-				'check_permissions'  => $check_permissions,
+				'detail_base_url'   => $detail_base_url,
+				'display_header'    => false,
+				'action_url'        => 'http' . ( isset( $_SERVER['HTTPS'] ) ? 's' : '' ) . '://' . "{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}?",
+				'field_ids'         => $a['fields'] ? explode( ',', $a['fields'] ) : array(),
+				'display_all'       => true, // Display others' entries
+				'id_column'         => $a['id_column'],
+				'submitter_column'  => $a['submitter_column'],
+				'step_column'       => $a['step_column'],
+				'status_column'     => $a['status_column'],
+				'last_updated'      => $a['last_updated'],
+				'step_status'       => $a['step_status'],
+				'workflow_info'     => $a['workflow_info'],
+				'sidebar'           => $a['sidebar'],
+				'check_permissions' => $check_permissions,
 			);
 
 			if ( ! empty( $a['form'] ) ) {
@@ -864,18 +854,18 @@ if ( class_exists( 'GFForms' ) ) {
 			}
 			$add_choices = $remove_choices = array();
 			foreach ( $folders as $folder ) {
-				$folder_id = $folder->get_id();
+				$folder_id  = $folder->get_id();
 				$folder_key = 'workflow_folder_' . $folder_id;
 				if ( empty( $entry[ $folder_key ] ) ) {
 					$add_choices[] = array(
-						'label'   => $folder->get_name(),
+						'label' => $folder->get_name(),
 						'value' => 'folders_add|' . $folder_id,
 					);
 				}
 
 				if ( isset( $entry[ $folder_key ] ) && $entry[ $folder_key ] > 0 ) {
 					$remove_choices[] = array(
-						'label'   => $folder->get_name(),
+						'label' => $folder->get_name(),
 						'value' => 'folders_remove|' . $folder_id,
 					);
 				}
@@ -885,11 +875,11 @@ if ( class_exists( 'GFForms' ) ) {
 				'label'   => esc_html__( 'Folders', 'gravityflowfolders' ),
 				'choices' => array(
 					array(
-						'label' => esc_html__( 'Add to folder', 'gravityflowfolders' ),
+						'label'   => esc_html__( 'Add to folder', 'gravityflowfolders' ),
 						'choices' => $add_choices,
 					),
 					array(
-						'label' => esc_html__( 'Remove from folder', 'gravityflowfolders' ),
+						'label'   => esc_html__( 'Remove from folder', 'gravityflowfolders' ),
 						'choices' => $remove_choices,
 					),
 				),
@@ -929,6 +919,7 @@ if ( class_exists( 'GFForms' ) ) {
 					gravity_flow()->add_timeline_note( $entry['id'], $feedback, $user_id );
 				}
 			}
+
 			return $feedback;
 		}
 
