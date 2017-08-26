@@ -420,7 +420,7 @@ if ( class_exists( 'GFForms' ) ) {
 						     src="<?php echo gravity_flow()->get_base_url(); ?>/images/gravityflow-icon-blue-grad.svg"
 						     style="margin-right:5px;"/>
 
-						<span><?php esc_html_e( 'Folders', 'gravityflow' ); ?></span>
+						<span><?php esc_html_e( 'Folders', 'gravityflowfolders' ); ?></span>
 
 					</h2>
 					<?php
@@ -528,7 +528,7 @@ if ( class_exists( 'GFForms' ) ) {
 
 			$url                             = admin_url( 'admin.php?page=gravityflow-folders&user_id=' . $user_object->ID );
 			$url                             = esc_url_raw( $url );
-			$new_actions['workflow_folders'] = "<a href='" . $url . "'>" . __( 'Folders' ) . '</a>';
+			$new_actions['workflow_folders'] = "<a href='" . $url . "'>" . __( 'Folders', 'gravityflowfolders' ) . '</a>';
 
 			return array_merge( $new_actions, $actions );
 		}
@@ -744,11 +744,11 @@ if ( class_exists( 'GFForms' ) ) {
 
 			$choices = array(
 				array(
-					'label'   => __( 'Users', 'gravityflow' ),
+					'label'   => __( 'Users', 'gravityflowfolders' ),
 					'choices' => $account_choices,
 				),
 				array(
-					'label'   => __( 'Roles', 'gravityflow' ),
+					'label'   => __( 'Roles', 'gravityflowfolders' ),
 					'choices' => $role_choices,
 				),
 			);
@@ -826,7 +826,7 @@ if ( class_exists( 'GFForms' ) ) {
 				}
 			}
 
-			$message = sprintf( esc_html__( 'Entries assigned to folder: %s.', 'gravityflow' ), $folder->get_name() );
+			$message = sprintf( esc_html__( 'Entries assigned to folder: %s.', 'gravityflowfolders' ), $folder->get_name() );
 
 			return $message;
 		}
