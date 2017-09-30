@@ -107,7 +107,7 @@ if ( class_exists( 'GFForms' ) ) {
 		/**
 		 * Add the extension capabilities to the Gravity Flow group in Members.
 		 *
-		 * @since 1.1-dev
+		 * @since 1.2-dev
 		 *
 		 * @param array $caps The capabilities and their human readable labels.
 		 *
@@ -116,10 +116,10 @@ if ( class_exists( 'GFForms' ) ) {
 		public function get_members_capabilities( $caps ) {
 			$prefix = $this->get_short_title() . ': ';
 
-			$caps['gravityflowfolders_settings']   = $prefix . __( 'Manage Settings', 'gravityflowfolders' );
-			$caps['gravityflowfolders_uninstall']  = $prefix . __( 'Uninstall', 'gravityflowfolders' );
 			$caps['gravityflowfolders_folders']    = $prefix . __( 'View Folders', 'gravityflowfolders' );
 			$caps['gravityflowfolders_user_admin'] = $prefix . __( 'List Users', 'gravityflowfolders' );
+			$caps['gravityflowfolders_settings']   = $prefix . __( 'Manage Settings', 'gravityflowfolders' );
+			$caps['gravityflowfolders_uninstall']  = $prefix . __( 'Uninstall', 'gravityflowfolders' );
 
 			return $caps;
 		}

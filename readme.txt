@@ -2,7 +2,7 @@
 Contributors: stevehenty
 Tags: gravity forms, approvals, workflow
 Requires at least: 4.0
-Tested up to: 4.7
+Tested up to: 4.8.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -21,8 +21,8 @@ Facebook: [Steven Henty](https://www.facebook.com/gravityflow.io)
 1. [Purchase and install Gravity Forms](https://gravityflow.io/gravityforms)
 1. [Purchase and install Gravity Flow](https://gravityflow.io)
 1. Wordpress 4.3+
-1. Gravity Forms 2.0+
-1. Gravity Flow 1.4+
+1. Gravity Forms 2.1+
+1. Gravity Flow 1.8+
 
 
 = Support =
@@ -43,6 +43,14 @@ The Gravity Flow Folders Extension will work with any license of [Gravity Flow](
 
 
 == ChangeLog ==
+
+= 1.1 =
+- Added logging statements.
+- Added support for Gravity Forms 2.3
+- Fixed a PHP notice which could occur when getting the folders.
+- Fixed an issue with the shortcode where entries in the folder may not be displayed.
+- Fixed an issue with the link to the folders list page from the breadcrumbs where the id parameter is not removed.
+
 
 = 1.0 =
 All new!
