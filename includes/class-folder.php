@@ -170,12 +170,16 @@ abstract class Gravity_Flow_Folder {
 
 		$permissions = rgar( $config, 'permissions' );
 
-		if ( empty( $permissions ) || $permissions == 'all' ) {
-			return true;
+		if ( empty( $user_id ) ) {
+			$user_id = get_current_user_id();
 		}
 
 		if ( empty( $user_id ) ) {
-			$user_id = get_current_user_id();
+			return false;
+		}
+
+		if ( empty( $permissions ) || $permissions == 'all' ) {
+			return true;
 		}
 
 		$assignees = rgar( $config, 'assignees' );
