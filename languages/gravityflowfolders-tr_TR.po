@@ -1,13 +1,13 @@
 # Copyright 2015-2017 Steven Henty.
 # Translators:
-# Süha Karalar <suhakaralar@gmail.com>, 2017
+# FX Bénard <fxb@wp-translations.org>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: gravityflowfolders\n"
 "Report-Msgid-Bugs-To: https://www.gravityflow.io\n"
-"POT-Creation-Date: 2017-07-23 19:54:44+00:00\n"
+"POT-Creation-Date: 2017-09-02 09:02:02+00:00\n"
 "PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Süha Karalar <suhakaralar@gmail.com>, 2017\n"
+"Last-Translator: FX Bénard <fxb@wp-translations.org>, 2017\n"
 "Language-Team: Turkish (Turkey) (https://www.transifex.com/gravityflow/teams/50678/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -33,7 +33,7 @@ msgstr "İsim"
 
 #: class-folders.php:152
 msgid "Custom Label"
-msgstr "Özel Etiket"
+msgstr "Özel etiket"
 
 #: class-folders.php:153
 msgid "Forms"
@@ -41,7 +41,7 @@ msgstr "Formlar"
 
 #: class-folders.php:154
 msgid "Entry List"
-msgstr "Kayıt Listesi"
+msgstr "Kayıt listesi"
 
 #: class-folders.php:155
 msgid "Personal Checklist"
@@ -65,15 +65,15 @@ msgstr "Bu nesne silinecektir. Emin misiniz?"
 
 #: class-folders.php:160
 msgid "New Folder"
-msgstr "Yeni Klasör"
+msgstr "Yeni klasör"
 
 #: class-folders.php:161
 msgid "All Users"
-msgstr "Tüm Kullanıcılar"
+msgstr "Tüm kullanıcılar"
 
 #: class-folders.php:162
 msgid "Select Users"
-msgstr "Kullanıcı Seç"
+msgstr "Kullanıcı seç"
 
 #: class-folders.php:248
 msgid "Configuration"
@@ -153,7 +153,7 @@ msgstr "%s klasörüne eklendi"
 
 #: includes/class-step-folders-remove.php:27
 msgid "Remove from Folder"
-msgstr "Klasörüden Çıkar"
+msgstr "Klasörüden çıkar"
 
 #: includes/class-step-folders-remove.php:116
 msgid "Removed from folder: %s"
@@ -161,7 +161,7 @@ msgstr "%s klasöründen çıkarıldı"
 
 #. Plugin Name of the plugin/theme
 msgid "Gravity Flow Folders"
-msgstr "Gravity Flow Klasörler"
+msgstr "Gravity Flow Folders"
 
 #. Author URI of the plugin/theme
 msgid "http://gravityflow.io"
@@ -169,7 +169,7 @@ msgstr "http://gravityflow.io"
 
 #. Description of the plugin/theme
 msgid "Folders Extension for Gravity Flow."
-msgstr "Gravity Flow için klasörler uzantısı."
+msgstr "Gravity Flow için Folders uzantısı."
 
 #. Author of the plugin/theme
 msgid "Steve Henty"

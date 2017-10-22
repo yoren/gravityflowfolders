@@ -1,19 +1,19 @@
 # Copyright 2015-2017 Steven Henty.
 # Translators:
-# 昕耘 刘 <liuxinyun6@126.com>, 2017
+# FX Bénard <fxb@wp-translations.org>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: gravityflowfolders\n"
 "Report-Msgid-Bugs-To: https://www.gravityflow.io\n"
 "POT-Creation-Date: 2017-09-02 09:02:02+00:00\n"
 "PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
-"Last-Translator: 昕耘 刘 <liuxinyun6@126.com>, 2017\n"
-"Language-Team: Chinese (China) (https://www.transifex.com/gravityflow/teams/50678/zh_CN/)\n"
+"Last-Translator: FX Bénard <fxb@wp-translations.org>, 2017\n"
+"Language-Team: Swedish (Sweden) (https://www.transifex.com/gravityflow/teams/50678/sv_SE/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_CN\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: sv_SE\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Gravity Flow Build Script\n"
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-Bookmarks: \n"
@@ -25,59 +25,59 @@ msgstr ""
 
 #: class-folders.php:129
 msgid "Select a form"
-msgstr ""
+msgstr "Välj ett formulär"
 
 #: class-folders.php:151
 msgid "Name"
-msgstr "姓名"
+msgstr "Namn"
 
 #: class-folders.php:152
 msgid "Custom Label"
-msgstr ""
+msgstr "Anpassad etikett"
 
 #: class-folders.php:153
 msgid "Forms"
-msgstr ""
+msgstr "Formulär"
 
 #: class-folders.php:154
 msgid "Entry List"
-msgstr ""
+msgstr "Lista med poster"
 
 #: class-folders.php:155
 msgid "Personal Checklist"
-msgstr ""
+msgstr "Personlig checklista"
 
 #: class-folders.php:156
 msgid "Sequential"
-msgstr ""
+msgstr "Sekventiell"
 
 #: class-folders.php:157
 msgid "You don't have any folders."
-msgstr ""
+msgstr "Du har inga mappar."
 
 #: class-folders.php:158
 msgid "Let's add one"
-msgstr ""
+msgstr "Låt oss lägga till en"
 
 #: class-folders.php:159
 msgid "This item will be deleted. Are you sure?"
-msgstr ""
+msgstr "Detta objekt kommer att raderas. Är du säker?"
 
 #: class-folders.php:160
 msgid "New Folder"
-msgstr ""
+msgstr "Ny mapp"
 
 #: class-folders.php:161
 msgid "All Users"
-msgstr ""
+msgstr "Alla användare"
 
 #: class-folders.php:162
 msgid "Select Users"
-msgstr ""
+msgstr "Välj användare"
 
 #: class-folders.php:248
 msgid "Configuration"
-msgstr ""
+msgstr "Konfiguration"
 
 #: class-folders.php:252 class-folders.php:335 class-folders.php:366
 #: class-folders.php:368 class-folders.php:412 class-folders.php:521
@@ -87,90 +87,92 @@ msgstr ""
 #: includes/class-step-folders-remove.php:65
 #: includes/class-step-folders-remove.php:75
 msgid "Folders"
-msgstr ""
+msgstr "Mappar"
 
 #: class-folders.php:737 includes/class-folders-detail.php:39
 #: includes/class-folders-list.php:21
 msgid "Users"
-msgstr ""
+msgstr "Användare"
 
 #: class-folders.php:741
 msgid "Roles"
-msgstr ""
+msgstr "Roller"
 
 #: class-folders.php:783
 msgid "Add to folder: %s"
-msgstr ""
+msgstr "Lägg till i mapp: %s"
 
 #: class-folders.php:819
 msgid "Entries assigned to folder: %s."
-msgstr ""
+msgstr "Poster som lagts i denna mapp: %s."
 
 #: class-folders.php:868
 msgid "Add to folder"
-msgstr ""
+msgstr "Lägg till i mapp"
 
 #: class-folders.php:872
 msgid "Remove from folder"
-msgstr ""
+msgstr "Ta bort ur mapp"
 
 #: class-folders.php:901
 msgid "Entry added to folder: %s"
-msgstr ""
+msgstr "Ärendet har lagts till i mappen: %s"
 
 #: class-folders.php:905
 msgid "Entry removed from folder: %s"
-msgstr ""
+msgstr "Ärendet har tagits bort ur mappen: %s"
 
 #: includes/class-folder.php:155
 msgid "Method '%s' not implemented. Must be over-ridden in subclass."
 msgstr ""
+"Metoden ”%s” är inte implementerad. Den måste åsidosättas i en underordnad "
+"klass."
 
 #: includes/class-folders-detail.php:28
 msgid "You don't have permission to view this folder"
-msgstr ""
+msgstr "Du saknar behörighet att se denna mapp"
 
 #: includes/class-folders-page.php:37
 msgid "Folder not found."
-msgstr ""
+msgstr "Mappen hittades inte"
 
 #: includes/class-folders-page.php:45
 msgid "You don't have any folders configured."
-msgstr ""
+msgstr "Du har inga mappar konfigurerade"
 
 #: includes/class-step-folders-add.php:28
 msgid "Add to Folder"
-msgstr ""
+msgstr "Lägg till i mapp"
 
 #: includes/class-step-folders-add.php:73
 #: includes/class-step-folders-remove.php:72
 msgid "You don't have any folders set up."
-msgstr ""
+msgstr "Du har inte skapat några mappar."
 
 #: includes/class-step-folders-add.php:115
 msgid "Added to folder: %s"
-msgstr ""
+msgstr "Tillagt i mapp: %s"
 
 #: includes/class-step-folders-remove.php:27
 msgid "Remove from Folder"
-msgstr ""
+msgstr "Ta bort ur mapp"
 
 #: includes/class-step-folders-remove.php:116
 msgid "Removed from folder: %s"
-msgstr ""
+msgstr "Borttaget ur mapp: %s"
 
 #. Plugin Name of the plugin/theme
 msgid "Gravity Flow Folders"
-msgstr ""
+msgstr "Gravity Flow Folders"
 
 #. Author URI of the plugin/theme
 msgid "http://gravityflow.io"
-msgstr ""
+msgstr "http://gravityflow.io"
 
 #. Description of the plugin/theme
 msgid "Folders Extension for Gravity Flow."
-msgstr ""
+msgstr "Tillägg för mappar i Gravity Flow."
 
 #. Author of the plugin/theme
 msgid "Steve Henty"
-msgstr ""
+msgstr "Steve Henty"

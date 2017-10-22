@@ -1,9 +1,9 @@
 # Copyright 2015-2017 Steven Henty.
 msgid ""
 msgstr ""
-"Project-Id-Version: Gravity Flow Folders 1.1\n"
+"Project-Id-Version: Gravity Flow Folders 1.2-dev\n"
 "Report-Msgid-Bugs-To: https://www.gravityflow.io\n"
-"POT-Creation-Date: 2017-09-02 09:02:02+00:00\n"
+"POT-Creation-Date: 2017-10-22 17:19:27+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -24,65 +24,81 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Textdomain-Support: yes\n"
 
-#: class-folders.php:129
+#: class-folders.php:119
+msgid "View Folders"
+msgstr ""
+
+#: class-folders.php:120
+msgid "List Users"
+msgstr ""
+
+#: class-folders.php:121
+msgid "Manage Settings"
+msgstr ""
+
+#: class-folders.php:122
+msgid "Uninstall"
+msgstr ""
+
+#: class-folders.php:140
 msgid "Select a form"
 msgstr ""
 
-#: class-folders.php:151
+#: class-folders.php:162
 msgid "Name"
 msgstr ""
 
-#: class-folders.php:152
+#: class-folders.php:163
 msgid "Custom Label"
 msgstr ""
 
-#: class-folders.php:153
+#: class-folders.php:164
 msgid "Forms"
 msgstr ""
 
-#: class-folders.php:154
+#: class-folders.php:165
 msgid "Entry List"
 msgstr ""
 
-#: class-folders.php:155
+#: class-folders.php:166
 msgid "Personal Checklist"
 msgstr ""
 
-#: class-folders.php:156
+#: class-folders.php:167
 msgid "Sequential"
 msgstr ""
 
-#: class-folders.php:157
+#: class-folders.php:168
 msgid "You don't have any folders."
 msgstr ""
 
-#: class-folders.php:158
+#: class-folders.php:169
 msgid "Let's add one"
 msgstr ""
 
-#: class-folders.php:159
+#: class-folders.php:170
 msgid "This item will be deleted. Are you sure?"
 msgstr ""
 
-#: class-folders.php:160
+#: class-folders.php:171
 msgid "New Folder"
 msgstr ""
 
-#: class-folders.php:161
+#: class-folders.php:172
 msgid "All Users"
 msgstr ""
 
-#: class-folders.php:162
+#: class-folders.php:173
 msgid "Select Users"
 msgstr ""
 
-#: class-folders.php:248
+#: class-folders.php:259
 msgid "Configuration"
 msgstr ""
 
-#: class-folders.php:252 class-folders.php:335 class-folders.php:366
-#: class-folders.php:368 class-folders.php:412 class-folders.php:521
-#: class-folders.php:865 includes/class-folders-detail.php:43
+#: class-folders.php:263 class-folders.php:346 class-folders.php:377
+#: class-folders.php:379 class-folders.php:423 class-folders.php:531
+#: class-folders.php:875 includes/class-folders-detail.php:43
 #: includes/class-step-folders-add.php:66
 #: includes/class-step-folders-add.php:76
 #: includes/class-step-folders-remove.php:65
@@ -90,36 +106,36 @@ msgstr ""
 msgid "Folders"
 msgstr ""
 
-#: class-folders.php:737 includes/class-folders-detail.php:39
+#: class-folders.php:747 includes/class-folders-detail.php:39
 #: includes/class-folders-list.php:21
 msgid "Users"
 msgstr ""
 
-#: class-folders.php:741
+#: class-folders.php:751
 msgid "Roles"
 msgstr ""
 
-#: class-folders.php:783
+#: class-folders.php:793
 msgid "Add to folder: %s"
 msgstr ""
 
-#: class-folders.php:819
+#: class-folders.php:829
 msgid "Entries assigned to folder: %s."
 msgstr ""
 
-#: class-folders.php:868
+#: class-folders.php:878
 msgid "Add to folder"
 msgstr ""
 
-#: class-folders.php:872
+#: class-folders.php:882
 msgid "Remove from folder"
 msgstr ""
 
-#: class-folders.php:901
+#: class-folders.php:911
 msgid "Entry added to folder: %s"
 msgstr ""
 
-#: class-folders.php:905
+#: class-folders.php:915
 msgid "Entry removed from folder: %s"
 msgstr ""
 
@@ -165,7 +181,7 @@ msgid "Gravity Flow Folders"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "http://gravityflow.io"
+msgid "https://gravityflow.io"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -173,5 +189,5 @@ msgid "Folders Extension for Gravity Flow."
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "Steve Henty"
+msgid "Gravity Flow"
 msgstr ""

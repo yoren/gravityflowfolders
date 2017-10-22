@@ -1,19 +1,19 @@
 # Copyright 2015-2017 Steven Henty.
 # Translators:
-# 昕耘 刘 <liuxinyun6@126.com>, 2017
+# FX Bénard <fxb@wp-translations.org>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: gravityflowfolders\n"
 "Report-Msgid-Bugs-To: https://www.gravityflow.io\n"
 "POT-Creation-Date: 2017-09-02 09:02:02+00:00\n"
 "PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
-"Last-Translator: 昕耘 刘 <liuxinyun6@126.com>, 2017\n"
-"Language-Team: Chinese (China) (https://www.transifex.com/gravityflow/teams/50678/zh_CN/)\n"
+"Last-Translator: FX Bénard <fxb@wp-translations.org>, 2017\n"
+"Language-Team: German (Germany) (https://www.transifex.com/gravityflow/teams/50678/de_DE/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_CN\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: de_DE\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Gravity Flow Build Script\n"
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-Bookmarks: \n"
@@ -25,59 +25,59 @@ msgstr ""
 
 #: class-folders.php:129
 msgid "Select a form"
-msgstr ""
+msgstr "Ein Formular auswählen"
 
 #: class-folders.php:151
 msgid "Name"
-msgstr "姓名"
+msgstr "Name"
 
 #: class-folders.php:152
 msgid "Custom Label"
-msgstr ""
+msgstr "Individuelle Beschriftung"
 
 #: class-folders.php:153
 msgid "Forms"
-msgstr ""
+msgstr "Formulare"
 
 #: class-folders.php:154
 msgid "Entry List"
-msgstr ""
+msgstr "Liste der Einträge"
 
 #: class-folders.php:155
 msgid "Personal Checklist"
-msgstr ""
+msgstr "Persönliche Checkliste"
 
 #: class-folders.php:156
 msgid "Sequential"
-msgstr ""
+msgstr "Sequentiell"
 
 #: class-folders.php:157
 msgid "You don't have any folders."
-msgstr ""
+msgstr "Du hast keine Ordner."
 
 #: class-folders.php:158
 msgid "Let's add one"
-msgstr ""
+msgstr "Füge einen hinzu"
 
 #: class-folders.php:159
 msgid "This item will be deleted. Are you sure?"
-msgstr ""
+msgstr "Dieser Eintrag wird gelöscht werden. Bist du sicher?"
 
 #: class-folders.php:160
 msgid "New Folder"
-msgstr ""
+msgstr "Neuer Ordner"
 
 #: class-folders.php:161
 msgid "All Users"
-msgstr ""
+msgstr "Alle Benutzer"
 
 #: class-folders.php:162
 msgid "Select Users"
-msgstr ""
+msgstr "Benutzer auswählen"
 
 #: class-folders.php:248
 msgid "Configuration"
-msgstr ""
+msgstr "Konfiguration"
 
 #: class-folders.php:252 class-folders.php:335 class-folders.php:366
 #: class-folders.php:368 class-folders.php:412 class-folders.php:521
@@ -87,90 +87,91 @@ msgstr ""
 #: includes/class-step-folders-remove.php:65
 #: includes/class-step-folders-remove.php:75
 msgid "Folders"
-msgstr ""
+msgstr "Ordner"
 
 #: class-folders.php:737 includes/class-folders-detail.php:39
 #: includes/class-folders-list.php:21
 msgid "Users"
-msgstr ""
+msgstr "Benutzer"
 
 #: class-folders.php:741
 msgid "Roles"
-msgstr ""
+msgstr "Rollen"
 
 #: class-folders.php:783
 msgid "Add to folder: %s"
-msgstr ""
+msgstr "Zu Ordner hinzufügen: %s"
 
 #: class-folders.php:819
 msgid "Entries assigned to folder: %s."
-msgstr ""
+msgstr "Einträge zugeordnet zu Ordner: %s."
 
 #: class-folders.php:868
 msgid "Add to folder"
-msgstr ""
+msgstr "Zu Ordner hinzufügen"
 
 #: class-folders.php:872
 msgid "Remove from folder"
-msgstr ""
+msgstr "Von Ordner entfernen"
 
 #: class-folders.php:901
 msgid "Entry added to folder: %s"
-msgstr ""
+msgstr "Eintrag zugeordnet zu Ordner: %s"
 
 #: class-folders.php:905
 msgid "Entry removed from folder: %s"
-msgstr ""
+msgstr "Eintrag entfernt von Ordner: %s"
 
 #: includes/class-folder.php:155
 msgid "Method '%s' not implemented. Must be over-ridden in subclass."
 msgstr ""
+"Methode „%s“ nicht implementiert. Muss in Subklasse überschrieben werden."
 
 #: includes/class-folders-detail.php:28
 msgid "You don't have permission to view this folder"
-msgstr ""
+msgstr "Du hast keine Berechtigung, diesen Ordner anzusehen"
 
 #: includes/class-folders-page.php:37
 msgid "Folder not found."
-msgstr ""
+msgstr "Ordner nicht gefunden."
 
 #: includes/class-folders-page.php:45
 msgid "You don't have any folders configured."
-msgstr ""
+msgstr "Du hast keine Ordner konfiguriert."
 
 #: includes/class-step-folders-add.php:28
 msgid "Add to Folder"
-msgstr ""
+msgstr "Zu Ordner hinzufügen"
 
 #: includes/class-step-folders-add.php:73
 #: includes/class-step-folders-remove.php:72
 msgid "You don't have any folders set up."
-msgstr ""
+msgstr "Du hast keine Ordner eingerichtet."
 
 #: includes/class-step-folders-add.php:115
 msgid "Added to folder: %s"
-msgstr ""
+msgstr "Hinzugefügt zu Ordner: %s"
 
 #: includes/class-step-folders-remove.php:27
 msgid "Remove from Folder"
-msgstr ""
+msgstr "Von Ordner entfernen"
 
 #: includes/class-step-folders-remove.php:116
 msgid "Removed from folder: %s"
-msgstr ""
+msgstr "Entfernt von Ordner: %s"
 
 #. Plugin Name of the plugin/theme
 msgid "Gravity Flow Folders"
-msgstr ""
+msgstr "Gravity Flow Folders"
 
 #. Author URI of the plugin/theme
 msgid "http://gravityflow.io"
-msgstr ""
+msgstr "http://gravityflow.io"
 
 #. Description of the plugin/theme
 msgid "Folders Extension for Gravity Flow."
-msgstr ""
+msgstr "Ordner-Erweiterung für Gravity Flow."
 
 #. Author of the plugin/theme
 msgid "Steve Henty"
-msgstr ""
+msgstr "Steve Henty"
