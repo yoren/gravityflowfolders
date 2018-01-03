@@ -9,7 +9,11 @@
 }
 .gravityflowfolders-folder-wrapper ul{
     text-align:left;
-    margin-left: 0px;
+    margin-left: 0;
+}
+.rtl .gravityflowfolders-folder-wrapper ul{
+    text-align:right;
+    margin-right: 0;
 }
 
 .gravityflowfolders-folder-wrapper a{
@@ -27,6 +31,9 @@
 .gravityflowfolders-folder-detail-wrapper.checklist ul li {
     list-style: disc outside none;
     margin-left:20px;
+}
+.rtl .gravityflowfolders-folder-detail-wrapper.checklist ul li {
+    margin-right:20px;
 }
 
 .gravityflowfolders-folder-detail-wrapper.checklist ol li {
